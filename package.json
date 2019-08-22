@@ -2,9 +2,12 @@
   "name": "nupjook-estate",
   "version": "1.0.0",
   "description": "KAIST 2019 Fall Freshmen Orientation Program A : Nupjook's Real Estate",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "webpack-dev-server",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -19,5 +22,29 @@
   "bugs": {
     "url": "https://github.com/HelloWorld017/nupjook-estate/issues"
   },
-  "homepage": "https://github.com/HelloWorld017/nupjook-estate#readme"
+  "homepage": "https://github.com/HelloWorld017/nupjook-estate#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "vue-loader": "^15.7.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-svg-loader": "^0.12.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0",
+    "vue": "^2.6.10",
+    "vuex": "^3.1.1"
+  }
 }

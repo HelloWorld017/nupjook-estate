@@ -20,13 +20,18 @@ class Game {
 
 		this.tick = 0;
 		this.updateBound = this.update.bind(this);
+
+		this.initData();
 	}
 
-	start() {
+	initData() {
 		this.events.push(...events.map(event => new Event(this, event)));
 		buildings.forEach(building => {
 			this.buildings[building.uid] = new Building(this, building);
 		});
+	}
+
+	start() {
 		this.update();
 	}
 
@@ -53,7 +58,7 @@ class Game {
 		const user = new User(this, name);
 		if(this.users[user.uid])
 			throw new Error("User already exists!");
-		
+
 		this.users[user.uid] = user;
 
 		this.addJournal('game.newuser', {
@@ -119,12 +124,65 @@ class Game {
 		this.broadcastPacket('game.journal', journalObject, 'admin');
 	}
 
-	saveGame() {
+	async saveGame() {
+		let savedest = './savedata';
 
+		try {
+			await fs.access('./savedata');
+		} catch(e) {
+			try {
+				await fs.promises.mkdir('./savedata');
+			} catch(e2) {
+				savedest = './';
+			}
+		}
+
+		const date = new Date();
+		const saveLocation = path.join(savedest, `save-${
+			date.getFullYear()}. ${
+			date.getMonth() + 1}. ${
+			date.getDate()}. ${
+			date.getHours()}-${
+			date.getMinutes()}-${
+			date.getSeconds()}.json`
+		);
+
+		const saveObject = {
+			journals: this.journals,
+			users: this.usersList.map(user => user.userDataSpecific),
+			buildings: this.buildingsList.map(building => building.buildingData),
+			round: this.round,
+			tick: this.tick,
+			nextRoundTick: this.nextRoundTick
+		};
+
+		await fs.promises.writeFile(saveLocation, JSON.stringify(saveObject, null, '\t'));
 	}
 
-	loadGame() {
+	async loadGame(savePath) {
+		const saveObject = JSON.parse(
+			await fs.promises.readFile(savePath, 'utf-8')
+		);
 
+		this.journals = saveObject.journals;
+		this.tick = saveObject.tick;
+		this.nextRoundTick = saveObject.nextRoundTick;
+		this.round = saveObject.round;
+
+		saveObject.users.forEach(userData => {
+			const user = new User(this, userData.name);
+			user.token = userData.token;
+			user.uid = userData.uid;
+			user.money = userData.money;
+			user.buildings = userData.buildings;
+
+			this.users[user.uid] = user;
+		});
+
+		saveObject.buildings.forEach(buildingData => {
+			this.buildings[buildingData.uid].price = buildingData.price;
+			this.buildings[buildingData.uid].owner = buildingData.owner;
+		});
 	}
 
 	broadcastPacket(packetName, payloadFnOrPayload, notifyFor = 'all') {
@@ -153,7 +211,7 @@ class Game {
 
 			if(user.socket) {
 				try {
-					user.socket.send(packetName, payload);
+					user.socket.emit(packetName, payload);
 				} catch(e) {}
 			}
 		});

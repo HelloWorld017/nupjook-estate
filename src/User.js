@@ -62,7 +62,7 @@ class User {
 		);
 
 		this.game.broadcastPacket('building.update', {building: buildingData});
-		this.socket.send('user.update', {
+		this.socket.emit('user.update', {
 			user: this.userData
 		});
 	}
@@ -87,13 +87,14 @@ class User {
 		);
 
 		this.game.broadcastPacket('building.update', {building: buildingData});
-		this.socket.send('user.update', {
+		this.socket.emit('user.update', {
 			user: this.userData
 		});
 	}
 
 	get userData() {
 		return {
+			name: this.name,
 			uid: this.uid,
 			money: this.money,
 			buildings: this.buildings
