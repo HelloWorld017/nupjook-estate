@@ -1,4 +1,3 @@
-const package = require('./package.json');
 const path = require('path');
 const webpack = require('webpack');
 
@@ -51,7 +50,6 @@ module.exports = {
     },
 
     mode: nodeEnv,
-    target,
 
     module: {
         rules: [
@@ -116,12 +114,12 @@ module.exports = {
     },
 
     plugins: [
-        new webpack.EnvironmentPlugin(['NODE_ENV']),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(nodeEnv)
+        }),
         new MiniCssExtractPlugin({filename: '[name].bundle.css'}),
         new VueLoaderPlugin()
     ],
-
-    target,
 
     devtool: '#eval-source-map'
 };

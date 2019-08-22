@@ -37,7 +37,7 @@ class Event {
 			targets: this.targets,
 			tier: this.tier,
 			round: this.round,
-			tags: this.tags;
+			tags: this.tags
 		};
 	}
 }

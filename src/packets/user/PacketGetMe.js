@@ -3,7 +3,7 @@ const UserPacket = require('./UserPacket');
 class PacketGetMe extends UserPacket {
 	doHandle(packetObject) {
 		return {
-			ok: true
+			ok: true,
 			user: this.user.userData
 		};
 	}

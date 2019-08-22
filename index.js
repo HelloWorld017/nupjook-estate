@@ -17,5 +17,7 @@ server.listen(port, () => {
 
 const io = socketio(server);
 io.on('connection', socket => {
+	//FIXME remove this before production
+	console.log("New Connection Established!");
 	packets(game, socket, packets.default);
 });

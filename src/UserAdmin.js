@@ -2,7 +2,7 @@ const packets = require('./packets');
 const User = require('./User');
 
 class UserAdmin extends User {
-	constructor(game, name) {
+	constructor(game) {
 		super(game, "Admin");
 
 		this.uid = Math.random().toString(36).slice(2, 7).toUpperCase();
@@ -31,12 +31,13 @@ class UserAdmin extends User {
 
 	get userData() {
 		return {
-			isAdmin: true,
+			name: this.name,
 			uid: this.uid,
 			money: this.money,
-			buildings: this.buildings
+			buildings: this.buildings,
+			isAdmin: true
 		};
 	}
 }
 
-module.exports = User;
+module.exports = UserAdmin;

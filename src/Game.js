@@ -5,6 +5,7 @@ const events = require('../data/events.json');
 const Building = require('./Building');
 const Event = require('./Event');
 const User = require('./User');
+const UserAdmin = require('./UserAdmin');
 
 class Game {
 	constructor() {
@@ -13,10 +14,10 @@ class Game {
 		this.users = {};
 		this.events = [];
 		this.admins = [];
-		this.round = 0;
+		this.round = 1;
 
 		this.journals = [];
-		this.nextRoundTick = this.config['round-minutes'] * 60 * 20;
+		this.nextRoundTick = this.config['round-minutes'] * 60 * 4;
 
 		this.tick = 0;
 		this.updateBound = this.update.bind(this);
@@ -51,7 +52,7 @@ class Game {
 			this.nextRound();
 		}
 
-		setTimeout(this.updateBound, 50);
+		setTimeout(this.updateBound, 250);
 	}
 
 	addUser(name) {
@@ -233,3 +234,5 @@ class Game {
 		return this.usersList.concat(this.admins);
 	}
 }
+
+module.exports = Game;

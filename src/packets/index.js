@@ -15,6 +15,8 @@ module.exports = function applyPackets(game, socket, packets, context) {
 		const packet = new PacketClass(game, context);
 
 		socket.on(PacketClass.name, (payload, callback) => {
+			//FIXME remove this before production
+			console.log("Packet Handle: ", PacketClass.name);
 			packet.handle(payload, callback);
 		});
 	});
