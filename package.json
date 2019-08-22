@@ -1,0 +1,23 @@
+{
+  "name": "nupjook-estate",
+  "version": "1.0.0",
+  "description": "KAIST 2019 Fall Freshmen Orientation Program A : Nupjook's Real Estate",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HelloWorld017/nupjook-estate.git"
+  },
+  "keywords": [
+    "KAIST",
+    "game"
+  ],
+  "author": "Khinenw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HelloWorld017/nupjook-estate/issues"
+  },
+  "homepage": "https://github.com/HelloWorld017/nupjook-estate#readme"
+}

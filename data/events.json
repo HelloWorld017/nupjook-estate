@@ -1,0 +1,101 @@
+[
+{
+	"eventId": "1-franchise",
+	"content": "Large franchise restraunt enters in Kaimaru",
+	"targets": ["N11", "N14", "N16", "N19", "NDM"],
+	"type": "normal",
+	"change": 2,
+	"round": 1,
+	"tags": []
+},
+
+{
+	"eventId": "1-ramyeon",
+	"content": "East ramyeon, weekend sale and price cut",
+	"targets": ["E5", "E2", "E3", "E9"],
+	"type": "normal",
+	"change": 1,
+	"round": 1,
+	"tags": []
+},
+
+{
+	"eventId": "1-store-alcohol",
+	"content": "Store sells liquor and a lot of new stuff",
+	"targets": ["N12S", "N12P", "N11"],
+	"type": "normal",
+	"change": 2,
+	"round": 1,
+	"tags": []
+},
+
+{
+	"eventId": "1-droptop",
+	"content": "Droptop coffee price cut",
+	"targets": ["W8", "W6", "W4"],
+	"type": "normal",
+	"change": 1,
+	"round": 1,
+	"tags": []
+},
+
+{
+	"eventId": "1-subway",
+	"content": "Subway starts opening event (add topping for free)",
+	"targets": ["E16", "E11"],
+	"type": "normal",
+	"change": 1,
+	"round": 1,
+	"tags": []
+},
+
+{
+	"eventId": "1-comic-cafe",
+	"content": "Comic book cafe opens the in Academic Cultural Complex",
+	"targets": ["E9"],
+	"type": "normal",
+	"change": 1,
+	"round": 1,
+	"tags": []
+},
+
+{
+	"eventId": "1-remodeling",
+	"content": "North side (except Somang, Areum) dormitories remodeled",
+	"targets": ["N14", "NDM"],
+	"type": "normal",
+	"change": 3,
+	"round": 1,
+	"tags": []
+},
+
+{
+	"eventId": "1-stadium-lawn",
+	"content": "Stadium lawn replacement",
+	"targets": ["E17"],
+	"type": "normal",
+	"change": 1,
+	"round": 1,
+	"tags": []
+},
+
+{
+	"eventId": "1-taewul-soju",
+	"content": "Tae Wul Gwan sells soju",
+	"targets": ["N13"],
+	"type": "normal",
+	"change": 1,
+	"round": 1,
+	"tags": []
+},
+
+{
+	"eventId": "1-bike",
+	"content": "Bike discount promotion",
+	"targets": ["BCS"],
+	"type": "normal",
+	"change": 1,
+	"round": 1,
+	"tags": []
+}
+]

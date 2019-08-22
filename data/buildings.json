@@ -1,0 +1,364 @@
+[
+{
+	"uid": "CRL",
+	"id": null,
+	"name": "Carillon",
+	"type": "Landmark",
+	"price": 1000,
+	"group": "Etcera"
+},
+
+{
+	"uid": "BCS",
+	"id": null,
+	"name": "Bicycle Store",
+	"type": "Service",
+	"price": 1000,
+	"group": "Etcera"
+},
+
+{
+	"uid": "N14",
+	"id": "N14",
+	"name": "Sarang Hall",
+	"type": "Dormitory",
+	"price": 1000,
+	"group": "North"
+},
+
+{
+	"uid": "N16",
+	"id": "N16",
+	"name": "Somang Hall",
+	"type": "Dormitory",
+	"price": 1000,
+	"group": "North"
+},
+
+{
+	"uid": "NDM",
+	"id": null,
+	"name": "Other North Dormitories",
+	"type": "Dormitory",
+	"price": 1000,
+	"group": "North"
+},
+
+{
+	"uid": "E14",
+	"id": "E14",
+	"name": "Main Administration B/D",
+	"type": "Organization",
+	"price": 1000,
+	"group": "East"
+},
+
+{
+	"uid": "N4",
+	"id": "N4",
+	"name": "School of Humanities & Social Science B/D",
+	"type": "Department",
+	"price": 1000,
+	"group": "North"
+},
+
+{
+	"uid": "N12",
+	"id": "N12",
+	"name": "Post Office B/D (Student Center - 2)",
+	"type": "Organization",
+	"price": 1000,
+	"group": "North"
+},
+
+{
+	"uid": "E6-5",
+	"id": "E6-5",
+	"name": "GoongNi Laboratory Building",
+	"type": "Department",
+	"price": 1000,
+	"group": "East"
+},
+
+{
+	"uid": "E17",
+	"id": "E17",
+	"name": "Stadium",
+	"type": "Service",
+	"price": 1000,
+	"group": "Etcera"
+},
+
+
+{
+	"uid": "EDS",
+	"id": null,
+	"name": "Eoeun Park (Eoeun Dongsan)",
+	"type": "Landmark",
+	"price": 2000,
+	"group": "Etcera"
+},
+
+{
+	"uid": "W9",
+	"id": "W9",
+	"name": "Outdoor Theater",
+	"type": "Landmark",
+	"price": 2000,
+	"group": "West"
+},
+
+{
+	"uid": "N12",
+	"id": "N12",
+	"name": "Store B/D (Student Center - 2)",
+	"type": "Service",
+	"price": 2000,
+	"group": "North"
+},
+
+{
+	"uid": "N19",
+	"id": "N19",
+	"name": "Areum Hall",
+	"type": "Dormitory",
+	"price": 2000,
+	"group": "North"
+},
+
+{
+	"uid": "W6",
+	"id": "W6",
+	"name": "Mir & Narae Hall",
+	"type": "Dormitory",
+	"price": 2000,
+	"group": "West"
+},
+
+{
+	"uid": "W4",
+	"id": "W4",
+	"name": "Heemang & Dasom Hall",
+	"type": "Dormitory",
+	"price": 2000,
+	"group": "West"
+},
+
+{
+	"uid": "N13",
+	"id": "N13",
+	"name": "Tae Wul Gwan",
+	"type": "Organization",
+	"price": 2000,
+	"group": "North"
+},
+
+{
+	"uid": "E5",
+	"id": "E5",
+	"name": "East Cafeteria (Faculty Club)",
+	"type": "Service",
+	"price": 2000,
+	"group": "East"
+},
+
+{
+	"uid": "N10",
+	"id": "N10",
+	"name": "Undergraduate Branch Library",
+	"type": "Service",
+	"price": 2000,
+	"group": "North"
+},
+
+{
+	"uid": "N11",
+	"id": "N11",
+	"name": "Cafeteria (Kaimaru)",
+	"type": "Service",
+	"price": 2000,
+	"group": "North"
+},
+
+
+{
+	"uid": "W2",
+	"id": "W2",
+	"name": "Student Center - 1",
+	"type": "Organization",
+	"price": 3000,
+	"group": "West"
+},
+
+{
+	"uid": "W8",
+	"id": "W8",
+	"name": "Education Support B/D",
+	"type": "Organization",
+	"price": 3000,
+	"group": "West"
+},
+
+{
+	"uid": "W1",
+	"id": "W1",
+	"name": "Applied Engineering B/D",
+	"type": "Department",
+	"price": 3000,
+	"group": "West"
+},
+
+{
+	"uid": "E2",
+	"id": "E2",
+	"name": "Industrial Engineering & Management B/D",
+	"type": "Department",
+	"price": 3000,
+	"group": "East"
+},
+
+{
+	"uid": "E3",
+	"id": "E3",
+	"name": "Information & Electronics B/D",
+	"type": "Department",
+	"price": 3000,
+	"group": "East"
+},
+
+{
+	"uid": "E6",
+	"id": "E6",
+	"name": "Natural Science B/D",
+	"type": "Department",
+	"price": 3000,
+	"group": "East"
+},
+
+{
+	"uid": "E16",
+	"id": "E16",
+	"name": "Bio & Brain Engineering B/D (ChungMoonSoul & YANG Bun Soon B/D)",
+	"type": "Department",
+	"price": 3000,
+	"group": "East"
+},
+
+{
+	"uid": "N7",
+	"id": "N7",
+	"name": "Mechanical Engineering B/D",
+	"type": "Department",
+	"price": 3000,
+	"group": "North"
+},
+
+{
+	"uid": "N22",
+	"id": "N22",
+	"name": "Business & Technology Management B/D (Alumni Venture Hall)",
+	"type": "Department",
+	"price": 3000,
+	"group": "North"
+},
+
+{
+	"uid": "N25",
+	"id": "N25",
+	"name": "Dept. of Industrial Design B/D",
+	"type": "Department",
+	"price": 3000,
+	"group": "North"
+},
+
+
+{
+	"uid": "E9",
+	"id": "E9",
+	"name": "Academic Cultural Complex",
+	"type": "Service",
+	"price": 4000,
+	"group": "East"
+},
+
+{
+	"uid": "E11",
+	"id": "E11",
+	"name": "Creative Learning B/D",
+	"type": "Department",
+	"price": 4000,
+	"group": "East"
+},
+
+{
+	"uid": "E15",
+	"id": "E15",
+	"name": "Auditorium",
+	"type": "Service",
+	"price": 4000,
+	"group": "East"
+},
+
+{
+	"uid": "N3",
+	"id": "N3",
+	"name": "Sports Complex",
+	"type": "Service",
+	"price": 4000,
+	"group": "North"
+},
+
+{
+	"uid": "E21",
+	"id": "E21",
+	"name": "Pappalardo Medical Center",
+	"type": "Service",
+	"price": 4000,
+	"group": "East"
+},
+
+{
+	"uid": "DPD",
+	"id": null,
+	"name": "Duck Pond",
+	"type": "Landmark",
+	"price": 4000,
+	"group": "Etcera"
+},
+
+{
+	"uid": "TAX",
+	"id": null,
+	"name": "Taxi Stand",
+	"type": "Service",
+	"price": 4000,
+	"group": "Etcera"
+},
+
+{
+	"uid": "N13-1",
+	"id": "N13-1",
+	"name": "Chang Young Shin Student Center",
+	"type": "Organization",
+	"price": 4000,
+	"group": "North"
+},
+
+{
+	"uid": "ELR",
+	"id": null,
+	"name": "Endless Road",
+	"type": "Landmark",
+	"price": 4000,
+	"group": "Etcera"
+},
+
+{
+	"uid": "E1",
+	"id": "E1",
+	"name": "Main Gate",
+	"type": "Landmark",
+	"price": 4000,
+	"group": "Etcera"
+}
+]
