@@ -28,7 +28,7 @@
 		align-items: center;
 		justify-content: space-between;
 
-		width: 160px;
+		width: 175px;
 		padding: 7px 14px;
 		margin: 5px;
 

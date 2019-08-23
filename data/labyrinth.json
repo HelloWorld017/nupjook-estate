@@ -1,0 +1,25 @@
+[
+	{
+		"round": 1,
+		"path": "labyrinth1.png",
+		"key": "1bXySI0kZlG6eyZD6H9KvM1VBrSyYuRPE7VAhbe914zBJTiAlUdQK3Q"
+	},
+
+	{
+		"round": 3,
+		"path": "labyrinth2.png",
+		"key": "2990y2V9tpOtRlzG704Qj9w2wVE4qb15sOtWI500q0m24ii8L8Q9xQ"
+	},
+
+	{
+		"round": 5,
+		"path": "labyrinth3.png",
+		"key": "fReSXRW0tHXDmiVKxGdKMvT20JGe0am1bHAHnUmvYiMQLVl0IMqg"
+	},
+
+	{
+		"round": 7,
+		"path": "labyrinth4.png",
+		"key": "0rKCQ8I92CmXhJ91j3N8m12amOl04BSxio8q5OKKeUbHc5rL7oDPQI"
+	}
+]

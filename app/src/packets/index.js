@@ -14,8 +14,8 @@ export default function applyPackets(socket, store) {
 	packets.forEach(PacketClass => {
 		const packet = new PacketClass(store);
 
-		socket.on(PacketClass.name, (payload, callback) => {
-			packet.handle(payload, callback);
+		socket.on(PacketClass.name, (payload) => {
+			packet.handle(payload);
 		});
 	});
 }

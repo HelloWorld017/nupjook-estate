@@ -9,6 +9,9 @@ import Vuex from "vuex";
 Vue.use(SocketPlugin);
 Vue.use(Vuex);
 
+//FIXME Remove address when production
+window.SERVER_ADDR = 'localhost:3000';
+
 (async () => {
 	const store = createStore();
 	const socket = await openSocket(store);

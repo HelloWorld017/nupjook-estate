@@ -90,9 +90,12 @@
 
 				const {buildings} = await this.$packet('getBuildings');
 				this.$store.commit('updateBuildings', buildings);
-				
+
 				const {user} = await this.$packet('getMe');
 				this.$store.commit('updateUser', user);
+
+				const initRoundInfo = await this.$packet('getRoundInfo');
+				this.$store.dispatch('initRound', initRoundInfo);
 			}
 		},
 

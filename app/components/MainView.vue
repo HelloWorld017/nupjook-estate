@@ -14,6 +14,9 @@
 
 		<section class="MainView__col MainView__col--secondary">
 			<building-list></building-list>
+			<transition name="FadeList" mode="out-in">
+				<component :is="subTab"></component>
+			</transition>
 		</section>
 	</div>
 </template>
@@ -43,6 +46,7 @@
 <script>
 	import BuildingList from "./BuildingList.vue";
 	import Kaimap from "./Kaimap.vue";
+	import Labyrinth from "./Labyrinth.vue";
 	import Status from "./Status.vue";
 	import TabButton from "./TabButton.vue";
 
@@ -74,6 +78,7 @@
 		components: {
 			BuildingList,
 			Kaimap,
+			Labyrinth,
 			Status,
 			TabButton
 		}

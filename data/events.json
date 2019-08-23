@@ -2,7 +2,7 @@
 {
 	"eventId": "1-franchise",
 	"content": "Large franchise restraunt enters in Kaimaru",
-	"targets": ["N11", "N14", "N16", "N19", "DORM"],
+	"targets": ["N11K", "N14", "N16", "N19", "DORM"],
 	"type": "normal",
 	"change": 2,
 	"round": 1,
@@ -22,7 +22,7 @@
 {
 	"eventId": "1-store-alcohol",
 	"content": "Store sells liquor and a lot of new stuff",
-	"targets": ["N12S", "N12P", "N11"],
+	"targets": ["N12", "N11P", "N11K"],
 	"type": "normal",
 	"change": 2,
 	"round": 1,

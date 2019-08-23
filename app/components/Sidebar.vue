@@ -1,7 +1,10 @@
 <template>
 	<aside class="Sidebar">
 		<h1 class="Sidebar__name">
-			{{name}}
+			{{name}}<br>
+			<span class="Sidebar__round">
+				Round {{round}}
+			</span>
 		</h1>
 
 		<h2 class="Sidebar__subtitle">
@@ -26,25 +29,34 @@
 		flex-direction: column;
 		flex-basis: 20vw;
 		height: 100vh;
-		padding: 20px;
 		box-sizing: border-box;
 		background: #edeeef;
 		font-family: 'Fira Sans', sans-serif;
 
 		&__name {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 			text-align: center;
-			padding: 20px 0;
-			font-size: 3rem;
+			height: 128px;
+			font-size: 2rem;
 			margin: 0;
+		}
+
+		&__round {
+			font-size: 1.3rem;
 		}
 
 		&__subtitle {
 			font-size: 1.7rem;
+			padding: 0 20px;
 			margin-top: 0;
 			margin-bottom: 20px;
 		}
 
 		&__events {
+			padding: 20px;
 			display: flex;
 			flex-direction: column-reverse;
 			overflow: auto;
@@ -64,6 +76,10 @@
 
 			events() {
 				return this.$store.state.events;
+			},
+
+			round() {
+				return this.$store.state.round;
 			}
 		},
 

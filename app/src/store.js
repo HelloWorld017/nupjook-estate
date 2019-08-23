@@ -8,7 +8,8 @@ export default () => new Vuex.Store({
 		nextRoundTick: 0,
 		nextRoundHandle: null,
 		tick: 0,
-		round: 0
+		round: 0,
+		labyrinth: null
 	},
 
 	mutations: {
@@ -44,17 +45,35 @@ export default () => new Vuex.Store({
 
 		addEvents(state, events) {
 			state.events.push(...events);
+		},
+
+		updateLabyrinth(state, labyrinth) {
+			state.labyrinth = labyrinth;
+		},
+
+		setRound(state, round) {
+			state.round = round;
 		}
 	},
 
 	actions: {
 		nextRound({commit}, nextRoundInfo) {
-			const {round, appliedEvents, buildingStatus, userData} = nextRoundInfo;
+			const {round, appliedEvents, buildingStatus, userData, labyrinth} = nextRoundInfo;
 
-			commit('nextRound', nextRoundInfo);
+			commit('setRound', round);
+			commit('updateLabyrinth', labyrinth);
+			commit('addEvents', appliedEvents);
 			commit('updateBuildings', buildingStatus);
 			commit('updateUser', userData);
-			commit('addEvents', appliedEvents);
+			commit('nextRound', nextRoundInfo);
+		},
+
+		initRound({commit}, initRoundInfo) {
+			const {pastEvents, round, tick, roundLeft, labyrinth} = initRoundInfo;
+			commit('setRound', round);
+			commit('updateTimer', {tick, roundLeft});
+			commit('updateLabyrinth', labyrinth);
+			commit('addEvents', pastEvents);
 		}
 	}
 });

@@ -1,7 +1,6 @@
 <template>
 	<div class="BuildingList">
-		<!--<building v-for="building in buildings" :key="building" :uid="building" large noprice>-->
-		<building v-for="i in 23" :key="i" uid="W8" large noprice>
+		<building v-for="building in buildings" :key="building" :uid="building" large noprice>
 		</building>
 	</div>
 </template>

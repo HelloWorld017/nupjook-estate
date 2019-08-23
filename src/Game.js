@@ -1,6 +1,7 @@
 const config = require('../config.json');
 const buildings = require('../data/buildings.json');
 const events = require('../data/events.json');
+const labyrinth = require('../data/labyrinth.json');
 
 const Building = require('./Building');
 const Event = require('./Event');
@@ -14,7 +15,8 @@ class Game {
 		this.users = {};
 		this.events = [];
 		this.admins = [];
-		this.round = 1;
+		this.round = 0;
+		this.enabledLabyrinth = null;
 
 		this.journals = [];
 		this.nextRoundTick = this.config['round-minutes'] * 60 * 4;
@@ -33,6 +35,7 @@ class Game {
 	}
 
 	start() {
+		this.nextRound();
 		this.update();
 	}
 
@@ -87,7 +90,9 @@ class Game {
 	nextRound() {
 		const appliedEvents = this.events.filter(event => event.round === this.round);
 
-		this.buildingsList.forEach(building => building.lastPrice = building.price);
+		if(this.round !== 0)
+			this.buildingsList.forEach(building => building.lastPrice = building.price);
+
 		appliedEvents.forEach(event => event.execute());
 
 		this.addJournal('game.nextround', {
@@ -95,22 +100,40 @@ class Game {
 		});
 
 		this.round++;
+
+		const newLabyrinth = labyrinth.find(labyrinthData => labyrinthData.round === this.round);
+		if(newLabyrinth) {
+			this.enabledLabyrinth = newLabyrinth;
+		}
+
+		let labyrinthPacket = {};
+
+		if(newLabyrinth) {
+			labyrinthPacket = {
+				key: this.enabledLabyrinth.key,
+				round: this.enabledLabyrinth.round
+			};
+		}
+
 		this.broadcastPacket(
 			'game.nextround',
 			user => ({
 				round: this.round,
 				appliedEvents: appliedEvents.map(event => event.eventData),
 				buildingStatus: this.buildingsList.map(building => building.buildingData),
-				userData: user.userData
+				userData: user.userData,
+				labyrinth: labyrinthPacket
 			})
 		);
 
-		if(this.round > this.config) {
+		if(this.round > this.config['max-round']) {
 			this.finish();
 		}
 	}
 
 	addJournal(logName, payload) {
+		console.log(logName, payload);
+
 		const journalObject = {
 			name: logName,
 			payload,

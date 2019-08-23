@@ -5,8 +5,7 @@ class Packet {
 	}
 
 	handle(packetObject, callback) {
-		const result = this.doHandle(packetObject);
-		callback(result);
+		this.doHandle(packetObject);
 	}
 
 	doHandle(packetObject) {
