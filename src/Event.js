@@ -35,7 +35,8 @@ class Event {
 			eventId: this.eventId,
 			content: this.content,
 			targets: this.targets,
-			tier: this.tier,
+			type: this.type,
+			change: this.change,
 			round: this.round,
 			tags: this.tags
 		};

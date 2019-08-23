@@ -4,7 +4,8 @@ class PacketGetRoundInfo extends UserPacket {
 	doHandle(packetObject) {
 		return {
 			ok: true,
-			pastEvents: this.game.events.filter(event => event.round < this.round),
+			pastEvents: this.game.events.filter(event => event.round < this.game.round)
+				.map(event => event.eventData),
 			round: this.game.round,
 			tick: this.game.tick,
 			roundLeft: this.game.nextRoundTick,
@@ -12,7 +13,9 @@ class PacketGetRoundInfo extends UserPacket {
 				{
 					key: this.game.enabledLabyrinth.key,
 					round: this.game.enabledLabyrinth.round
-				} : null
+				} : null,
+
+			maxRounds: this.game.config['max-round']
 		};
 	}
 

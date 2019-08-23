@@ -100,13 +100,14 @@ class Game {
 		});
 
 		this.round++;
+		this.nextRoundTick = this.config['round-minutes'] * 60 * 4;
 
 		const newLabyrinth = labyrinth.find(labyrinthData => labyrinthData.round === this.round);
 		if(newLabyrinth) {
 			this.enabledLabyrinth = newLabyrinth;
 		}
 
-		let labyrinthPacket = {};
+		let labyrinthPacket = null;
 
 		if(newLabyrinth) {
 			labyrinthPacket = {

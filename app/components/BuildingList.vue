@@ -9,8 +9,10 @@
 	.BuildingList {
 		display: flex;
 		flex-wrap: wrap;
+		flex-shrink: 0;
 		justify-content: center;
 		padding: 10px;
+		max-height: 20vh;
 
 		overflow: auto;
 	}

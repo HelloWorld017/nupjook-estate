@@ -10,6 +10,9 @@
 	.Panzoom {
 		position: relative;
 		overflow: hidden;
+		outline: none;
+		
+		cursor: grab;
 
 		&--grabbing {
 			cursor: grabbing;

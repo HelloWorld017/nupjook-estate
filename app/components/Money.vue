@@ -1,10 +1,8 @@
 <template>
 	<transition-group class="Money" name="FadeList" tag="div">
 		<anim-number v-for="(text, index) in computedText"
-			:class="[
-				index === computedText.length - 1 && lastStyle ? lastStyle : '',
-				index === computedText.length - 1 && lastSpace ? 'Money__space' : ''
-			]"
+			:class="index === computedText.length - 1 && lastStyle ? lastStyle : ''"
+			:style="index === computedText.length - 1 ? lastSpace : ''"
 			:number="text" :key="computedText.length - index">
 		</anim-number>
 	</transition-group>
@@ -39,7 +37,11 @@
 		props: {
 			current: Number,
 			last: Number,
-			updown: Boolean
+			updown: Boolean,
+			space: {
+				type: Number,
+				default: 5
+			}
 		},
 
 		computed: {
@@ -73,8 +75,8 @@
 			},
 
 			lastSpace() {
-				if(!this.last) return false;
-				return true;
+				if(!this.last) return {};
+				return {'margin-left': `${this.space}px`};
 			}
 		},
 

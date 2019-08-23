@@ -33,9 +33,7 @@
 			},
 
 			valuation() {
-				return this.$store.state.user.buildings.reduce((prev, bldgUid) => {
-					return prev + this.$store.state.buildings[bldgUid].price;
-				}, 0);
+				return this.$store.getters.valuation;
 			},
 
 			roundLeft() {

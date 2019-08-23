@@ -32,6 +32,10 @@
 		&-enter {
 			opacity: 0;
 			transform: translateX(-30px);
+
+			&-active {
+				transition: all .4s ease;
+			}
 		}
 
 		&-leave {
@@ -42,11 +46,54 @@
 
 			&-active {
 				position: absolute;
+				transition: all .4s ease;
 			}
 		}
 
 		&-move {
 			transition: all .4s ease;
+		}
+	}
+
+	.Fade {
+		&-enter {
+			opacity: 0;
+			transform: translateX(-30px);
+
+			&-active {
+				transition: all .4s ease;
+			}
+		}
+
+		&-leave {
+			&-to {
+				opacity: 0;
+				transform: translateX(30px);
+			}
+
+			&-active {
+				transition: all .4s ease;
+			}
+		}
+	}
+
+	.Opacity {
+		&-enter {
+			opacity: 0;
+
+			&-active {
+				transition: all .4s ease;
+			}
+		}
+
+		&-leave {
+			&-to {
+				opacity: 0;
+			}
+
+			&-active {
+				transition: all .4s ease;
+			}
 		}
 	}
 </style>

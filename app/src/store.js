@@ -9,6 +9,7 @@ export default () => new Vuex.Store({
 		nextRoundHandle: null,
 		tick: 0,
 		round: 0,
+		maxRounds: 8,
 		labyrinth: null
 	},
 
@@ -48,17 +49,35 @@ export default () => new Vuex.Store({
 		},
 
 		updateLabyrinth(state, labyrinth) {
+			if(!labyrinth) return;
 			state.labyrinth = labyrinth;
 		},
 
 		setRound(state, round) {
 			state.round = round;
+		},
+
+		setMaxRounds(state, maxRounds) {
+			state.maxRounds = maxRounds;
+		}
+	},
+
+	getters: {
+		valuation(state) {
+			return state.user.buildings.reduce((prev, bldgUid) => {
+				return prev + state.buildings[bldgUid].price;
+			}, state.user.money);
+		},
+
+		labyrinthUrl(state) {
+			return `//${SERVER_ADDR}/labyrinth/${state.labyrinth.round}?key=${state.labyrinth.key}`;
 		}
 	},
 
 	actions: {
-		nextRound({commit}, nextRoundInfo) {
+		nextRound({commit, getters}, nextRoundInfo) {
 			const {round, appliedEvents, buildingStatus, userData, labyrinth} = nextRoundInfo;
+			nextRoundInfo.oldValuation = getters.valuation;
 
 			commit('setRound', round);
 			commit('updateLabyrinth', labyrinth);
@@ -69,11 +88,12 @@ export default () => new Vuex.Store({
 		},
 
 		initRound({commit}, initRoundInfo) {
-			const {pastEvents, round, tick, roundLeft, labyrinth} = initRoundInfo;
+			const {pastEvents, round, maxRounds, tick, roundLeft, labyrinth} = initRoundInfo;
 			commit('setRound', round);
 			commit('updateTimer', {tick, roundLeft});
 			commit('updateLabyrinth', labyrinth);
 			commit('addEvents', pastEvents);
+			commit('setMaxRounds', maxRounds);
 		}
 	}
 });

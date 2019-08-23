@@ -23,11 +23,6 @@
 		display: flex;
 		flex-direction: column;
 		flex: 1;
-		cursor: grab;
-
-		&--grabbing {
-			cursor: grabbing;
-		}
 
 		&__wrapper {
 			flex: 1;
@@ -36,6 +31,11 @@
 		&__image {
 			width: 2000px;
 			height: 1229px;
+		}
+
+		&__options {
+			margin-top: 5px;
+			margin-left: 5px;
 		}
 	}
 </style>

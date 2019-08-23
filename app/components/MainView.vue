@@ -2,7 +2,7 @@
 	<div class="MainView">
 		<section class="MainView__col">
 			<status></status>
-			<transition name="FadeList" mode="out-in">
+			<transition name="Fade" mode="out-in">
 				<component :is="mainTab"></component>
 			</transition>
 			<div class="MainView__tab">
@@ -14,21 +14,25 @@
 
 		<section class="MainView__col MainView__col--secondary">
 			<building-list></building-list>
-			<transition name="FadeList" mode="out-in">
+			<transition name="Fade" mode="out-in">
 				<component :is="subTab"></component>
 			</transition>
 		</section>
+
+		<next-round></next-round>
 	</div>
 </template>
 
 <style lang="less" scoped>
 	.MainView {
 		display: flex;
-		flex: 1;
+		width: 80vw;
+		height: 100vh;
 
 		&__col {
 			display: flex;
 			flex-direction: column;
+			min-width: 0;
 
 			flex: 3;
 
@@ -47,6 +51,8 @@
 	import BuildingList from "./BuildingList.vue";
 	import Kaimap from "./Kaimap.vue";
 	import Labyrinth from "./Labyrinth.vue";
+	import NextRound from "./round/NextRound.vue";
+	import PriceTable from "./PriceTable.vue";
 	import Status from "./Status.vue";
 	import TabButton from "./TabButton.vue";
 
@@ -79,6 +85,8 @@
 			BuildingList,
 			Kaimap,
 			Labyrinth,
+			NextRound,
+			PriceTable,
 			Status,
 			TabButton
 		}

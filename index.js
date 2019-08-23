@@ -9,14 +9,10 @@ const Game = require('./src/Game');
 
 const game = new Game();
 // FIXME remove below before production
-game.start();
+setTimeout(() => game.start(), 5000);
 
 const port = parseInt(process.env.PORT || '3000');
 const app = express();
-app.get('/', (req, res) => {
-	res.sendFile('./index.html', {root: __dirname});
-});
-
 app.get('/labyrinth/:round', (req, res) => {
 	const round = parseInt(req.params.round);
 	const key = req.query.key;
@@ -34,6 +30,7 @@ app.get('/labyrinth/:round', (req, res) => {
 	res.sendFile(labyrinthData.path, {root: path.resolve(__dirname, 'data', 'labyrinth')});
 });
 
+app.use('/', express.static('public'));
 app.use('/dist', express.static('dist'));
 
 const server = http.createServer(app);

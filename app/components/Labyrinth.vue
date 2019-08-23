@@ -28,7 +28,7 @@
 			},
 
 			labyrinthSrc() {
-				return `//${SERVER_ADDR}/labyrinth/${this.labyrinth.round}?key=${this.labyrinth.key}`;
+				return this.$store.getters.labyrinthUrl;
 			}
 		},
 

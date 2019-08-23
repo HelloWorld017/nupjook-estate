@@ -121,7 +121,11 @@ module.exports = {
         new VueLoaderPlugin()
     ],
 
-    devtool: '#eval-source-map'
+    devtool: '#eval-source-map',
+
+    devServer: {
+        contentBase: path.resolve(__dirname, 'public')
+    }
 };
 
 if(nodeEnv === 'production') {

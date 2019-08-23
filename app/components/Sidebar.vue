@@ -16,7 +16,7 @@
 				<event v-for="event in events"
 					class="Sidebar__event" :key="event.eventId" :event="event">
 
-					{{content}}
+					{{event.content}}
 				</event>
 			</transition-group>
 		</div>
@@ -27,7 +27,7 @@
 	.Sidebar {
 		display: flex;
 		flex-direction: column;
-		flex-basis: 20vw;
+		width: 20vw;
 		height: 100vh;
 		box-sizing: border-box;
 		background: #edeeef;
@@ -56,7 +56,7 @@
 		}
 
 		&__events {
-			padding: 20px;
+			padding: 20px 0;
 			display: flex;
 			flex-direction: column-reverse;
 			overflow: auto;

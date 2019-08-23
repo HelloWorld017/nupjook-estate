@@ -43,7 +43,7 @@
 		"price": 1000,
 		"group": "North",
 		"position": {
-			"x": 692,
+			"x": 687,
 			"y": 240
 		}
 	},
@@ -91,7 +91,7 @@
 		"price": 1000,
 		"group": "North",
 		"position": {
-			"x": 819,
+			"x": 814,
 			"y": 305
 		}
 	},
@@ -223,7 +223,7 @@
 		"price": 2000,
 		"group": "North",
 		"position": {
-			"x": 1106,
+			"x": 1111,
 			"y": 251
 		}
 	},
@@ -439,7 +439,7 @@
 		"price": 4000,
 		"group": "Et cetera",
 		"position": {
-			"x": 730,
+			"x": 725,
 			"y": 183
 		}
 	},

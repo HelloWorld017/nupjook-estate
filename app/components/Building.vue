@@ -10,7 +10,7 @@
 		{{building.uid}}
 
 		<div class="Building__price" v-if="!noprice">
-			<money :current="building.price" :last="building.lastPrice" :updown="!sold && !owning"></money>
+			<money :current="building.price" :last="building.lastPrice" :updown="!sold && !owning" :space="10"></money>
 		</div>
 	</div>
 </template>
@@ -28,7 +28,7 @@
 		align-items: center;
 		justify-content: space-between;
 
-		width: 175px;
+		width: 180px;
 		padding: 7px 14px;
 		margin: 5px;
 
