@@ -51,6 +51,12 @@
 	}
 </style>
 
+<style lang="less" scoped>
+	#app {
+		display: flex;
+	}
+</style>
+
 <script>
 	import Login from "./components/Login.vue";
 	import MainView from "./components/MainView.vue";

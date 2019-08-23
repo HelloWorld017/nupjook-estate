@@ -87,9 +87,8 @@ class Game {
 	nextRound() {
 		const appliedEvents = this.events.filter(event => event.round === this.round);
 
-		this.buildingsList.forEach(building => building.nextPrice = building.price);
+		this.buildingsList.forEach(building => building.lastPrice = building.price);
 		appliedEvents.forEach(event => event.execute());
-		this.buildingsList.forEach(building => building.price = building.nextPrice);
 
 		this.addJournal('game.nextround', {
 			round: this.round
@@ -182,6 +181,7 @@ class Game {
 
 		saveObject.buildings.forEach(buildingData => {
 			this.buildings[buildingData.uid].price = buildingData.price;
+			this.buildings[buildingData.uid].lastPrice = buildingData.lastPrice;
 			this.buildings[buildingData.uid].owner = buildingData.owner;
 		});
 	}

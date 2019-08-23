@@ -24,7 +24,7 @@
 	.Sidebar {
 		display: flex;
 		flex-direction: column;
-		max-width: 20vw;
+		flex-basis: 20vw;
 		height: 100vh;
 		padding: 20px;
 		box-sizing: border-box;
@@ -38,7 +38,15 @@
 			margin: 0;
 		}
 
+		&__subtitle {
+			font-size: 1.7rem;
+			margin-top: 0;
+			margin-bottom: 20px;
+		}
+
 		&__events {
+			display: flex;
+			flex-direction: column-reverse;
 			overflow: auto;
 			flex: 1;
 		}

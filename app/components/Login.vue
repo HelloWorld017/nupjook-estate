@@ -88,8 +88,11 @@
 					return;
 				}
 
+				const {buildings} = await this.$packet('getBuildings');
+				this.$store.commit('updateBuildings', buildings);
+				
 				const {user} = await this.$packet('getMe');
-				this.$store.commit('updateUser', user)
+				this.$store.commit('updateUser', user);
 			}
 		},
 

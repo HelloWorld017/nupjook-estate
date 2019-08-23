@@ -2,7 +2,7 @@
 {
 	"eventId": "1-franchise",
 	"content": "Large franchise restraunt enters in Kaimaru",
-	"targets": ["N11", "N14", "N16", "N19", "NDM"],
+	"targets": ["N11", "N14", "N16", "N19", "DORM"],
 	"type": "normal",
 	"change": 2,
 	"round": 1,
@@ -62,7 +62,7 @@
 {
 	"eventId": "1-remodeling",
 	"content": "North side (except Somang, Areum) dormitories remodeled",
-	"targets": ["N14", "NDM"],
+	"targets": ["N14", "DORM"],
 	"type": "normal",
 	"change": 3,
 	"round": 1,
@@ -92,7 +92,7 @@
 {
 	"eventId": "1-bike",
 	"content": "Bike discount promotion",
-	"targets": ["BCS"],
+	"targets": ["BIKE"],
 	"type": "normal",
 	"change": 1,
 	"round": 1,
