@@ -62,9 +62,9 @@ class User {
 		);
 
 		this.game.broadcastPacket('building.update', {building: buildingData});
-		this.socket.emit('user.update', {
-			user: this.userData
-		});
+		this.game.broadcastPacket('user.updateAsAdmin', {user: this.userDataSpecific}, 'admin');
+		if(this.socket)
+			this.socket.emit('user.update', {user: this.userData});
 	}
 
 	sellBuilding(buildingUid) {
@@ -87,9 +87,9 @@ class User {
 		);
 
 		this.game.broadcastPacket('building.update', {building: buildingData});
-		this.socket.emit('user.update', {
-			user: this.userData
-		});
+		this.game.broadcastPacket('user.updateAsAdmin', {user: this.userDataSpecific}, 'admin');
+		if(this.socket)
+			this.socket.emit('user.update', {user: this.userData});
 	}
 
 	get userData() {

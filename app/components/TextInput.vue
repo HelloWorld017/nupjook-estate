@@ -29,7 +29,7 @@
 		},
 
 		props: {
-			value: String,
+			value: {},
 			type: {
 				type: String,
 				default: 'text'

@@ -2,6 +2,8 @@ const AdminPacket = require('./AdminPacket');
 
 class PacketAddTime extends AdminPacket {
 	doHandle({amount}) {
+		amount = parseInt(amount);
+
 		if(!isFinite(amount)) {
 			return {
 				ok: false,

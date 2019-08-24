@@ -37,12 +37,7 @@
 			},
 
 			roundLeft() {
-				const totalSecs = Math.floor(this.$store.state.nextRoundTick / 4);
-				const mins = Math.floor(totalSecs / 60);
-				const secs = totalSecs % 60;
-				const secsPadded = secs.toString().length < 2 ? `0${secs}` : `${secs}`;
-
-				return `${mins}:${secsPadded}`;
+				return this.$store.getters.roundLeft;
 			}
 		},
 

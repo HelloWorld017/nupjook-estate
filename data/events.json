@@ -1,101 +1,673 @@
 [
-{
-	"eventId": "1-franchise",
-	"content": "Large franchise restraunt enters in Kaimaru",
-	"targets": ["N11K", "N14", "N16", "N19", "DORM"],
-	"type": "normal",
-	"change": 2,
-	"round": 1,
-	"tags": []
-},
+	{
+		"eventId": "1-franchise",
+		"content": "Large franchise restraunt enters in Kaimaru",
+		"targets": ["N11K", "N14", "N16", "N19", "DORM"],
+		"type": "normal",
+		"change": 2,
+		"round": 1,
+		"tags": []
+	},
 
-{
-	"eventId": "1-ramyeon",
-	"content": "East ramyeon, weekend sale and price cut",
-	"targets": ["E5", "E2", "E3", "E9"],
-	"type": "normal",
-	"change": 1,
-	"round": 1,
-	"tags": []
-},
+	{
+		"eventId": "1-ramyeon",
+		"content": "East ramyeon, weekend sale and price cut",
+		"targets": ["E5", "E2", "E3", "E9"],
+		"type": "normal",
+		"change": 1,
+		"round": 1,
+		"tags": []
+	},
 
-{
-	"eventId": "1-store-alcohol",
-	"content": "Store sells liquor and a lot of new stuff",
-	"targets": ["N12", "N11P", "N11K"],
-	"type": "normal",
-	"change": 2,
-	"round": 1,
-	"tags": []
-},
+	{
+		"eventId": "1-store-alcohol",
+		"content": "Store sells liquor and a lot of new stuff",
+		"targets": ["N12", "N11P", "N11K"],
+		"type": "normal",
+		"change": 2,
+		"round": 1,
+		"tags": []
+	},
 
-{
-	"eventId": "1-droptop",
-	"content": "Droptop coffee price cut",
-	"targets": ["W8", "W6", "W4"],
-	"type": "normal",
-	"change": 1,
-	"round": 1,
-	"tags": []
-},
+	{
+		"eventId": "1-droptop",
+		"content": "Droptop coffee price cut",
+		"targets": ["W8", "W6", "W4"],
+		"type": "normal",
+		"change": 1,
+		"round": 1,
+		"tags": []
+	},
 
-{
-	"eventId": "1-subway",
-	"content": "Subway starts opening event (add topping for free)",
-	"targets": ["E16", "E11"],
-	"type": "normal",
-	"change": 1,
-	"round": 1,
-	"tags": []
-},
+	{
+		"eventId": "1-subway",
+		"content": "Subway starts opening event (add topping for free)",
+		"targets": ["E16", "E11"],
+		"type": "normal",
+		"change": 1,
+		"round": 1,
+		"tags": []
+	},
 
-{
-	"eventId": "1-comic-cafe",
-	"content": "Comic book cafe opens the in Academic Cultural Complex",
-	"targets": ["E9"],
-	"type": "normal",
-	"change": 1,
-	"round": 1,
-	"tags": []
-},
+	{
+		"eventId": "1-comic-cafe",
+		"content": "Comic book cafe opens the in Academic Cultural Complex",
+		"targets": ["E9"],
+		"type": "normal",
+		"change": 1,
+		"round": 1,
+		"tags": []
+	},
 
-{
-	"eventId": "1-remodeling",
-	"content": "North side (except Somang, Areum) dormitories remodeled",
-	"targets": ["N14", "DORM"],
-	"type": "normal",
-	"change": 3,
-	"round": 1,
-	"tags": []
-},
+	{
+		"eventId": "1-remodeling",
+		"content": "North side (except Somang, Areum) dormitories remodeled",
+		"targets": ["N14", "DORM"],
+		"type": "normal",
+		"change": 3,
+		"round": 1,
+		"tags": []
+	},
 
-{
-	"eventId": "1-stadium-lawn",
-	"content": "Stadium lawn replacement",
-	"targets": ["E17"],
-	"type": "normal",
-	"change": 1,
-	"round": 1,
-	"tags": []
-},
+	{
+		"eventId": "1-stadium-lawn",
+		"content": "Stadium lawn replacement",
+		"targets": ["E17"],
+		"type": "normal",
+		"change": 1,
+		"round": 1,
+		"tags": []
+	},
 
-{
-	"eventId": "1-taewul-soju",
-	"content": "Tae Wul Gwan sells soju",
-	"targets": ["N13"],
-	"type": "normal",
-	"change": 1,
-	"round": 1,
-	"tags": []
-},
+	{
+		"eventId": "1-taewul-soju",
+		"content": "Tae Wul Gwan sells soju",
+		"targets": ["N13"],
+		"type": "normal",
+		"change": 1,
+		"round": 1,
+		"tags": []
+	},
 
-{
-	"eventId": "1-bike",
-	"content": "Bike discount promotion",
-	"targets": ["BIKE"],
-	"type": "normal",
-	"change": 1,
-	"round": 1,
-	"tags": []
-}
+	{
+		"eventId": "1-bike",
+		"content": "Bike discount promotion",
+		"targets": ["BIKE"],
+		"type": "normal",
+		"change": 1,
+		"round": 1,
+		"tags": []
+	},
+
+	{
+		"eventId": "2-radium",
+		"content": "Radium is detected in mettress of dorms",
+		"targets": ["N14", "N16", "N19", "DORM", "W6", "W4"],
+		"type": "normal",
+		"change": -2,
+		"round": 2,
+		"tags": []
+	},
+
+	{
+		"eventId": "2-goose-breeding",
+		"content": "Goose breeding due to increase of fish population",
+		"targets": ["POND", "CARI", "E1"],
+		"type": "normal",
+		"change": 1,
+		"round": 2,
+		"tags": []
+	},
+
+	{
+		"eventId": "2-air-conditioner",
+		"content": "Air-conditioner is installed in Coin Karaoke",
+		"targets": ["W9", "PARK", "W8"],
+		"type": "normal",
+		"change": 1,
+		"round": 2,
+		"tags": []
+	},
+
+	{
+		"eventId": "2-cherry-blossoms",
+		"content": "As cherry blossoms bloom, many people visit KAIST. This event induces garbage increase, and academic obstruction",
+		"targets": ["E9", "N10"],
+		"type": "normal",
+		"change": -3,
+		"round": 2,
+		"tags": []
+	},
+
+	{
+		"eventId": "2-dematological-equipment",
+		"content": "Pappalardo Medical Center, introduction of Dematological Equipment",
+		"targets": ["E21"],
+		"type": "normal",
+		"change": 2,
+		"round": 2,
+		"tags": []
+	},
+
+	{
+		"eventId": "2-explosion",
+		"content": "Explosion accident occurs in Mechanical Engineering B/D. Fortunately, there was no casualty",
+		"targets": ["N7"],
+		"type": "normal",
+		"change": -2,
+		"round": 2,
+		"tags": []
+	},
+
+	{
+		"eventId": "2-motorcycle-accident",
+		"content": "Motorcycle accident occurs in Heemang Hall parking lot",
+		"targets": ["W4"],
+		"type": "normal",
+		"change": -2,
+		"round": 2,
+		"tags": []
+	},
+
+	{
+		"eventId": "2-new-sports-equipments",
+		"content": "New sports equipments introduce in Sports Complex",
+		"targets": ["N3"],
+		"type": "normal",
+		"change": 1,
+		"round": 2,
+		"tags": []
+	},
+
+	{
+		"eventId": "3-spas",
+		"content": "Underground spas introduce in dormistries",
+		"targets": ["N14", "N16", "N19", "DORM", "W6", "W4"],
+		"type": "normal",
+		"change": 1,
+		"round": 3,
+		"tags": []
+	},
+
+	{
+		"eventId": "3-food-poisoning",
+		"content": "Food poisoning",
+		"targets": ["N11K", "E5", "W2"],
+		"type": "normal",
+		"change": -2,
+		"round": 3,
+		"tags": []
+	},
+
+	{
+		"eventId": "3-roof",
+		"content": "KAIST made a roof on the Academic Cultural Complex road",
+		"targets": ["N13-1", "N3", "E11"],
+		"type": "normal",
+		"change": 1,
+		"round": 3,
+		"tags": []
+	},
+
+	{
+		"eventId": "3-creative-architecture",
+		"content": "Carillon wins the mayor's prize for its creative architecture",
+		"targets": ["CARI", "POND"],
+		"type": "normal",
+		"change": 2,
+		"round": 3,
+		"tags": []
+	},
+
+	{
+		"eventId": "3-latest-equipment",
+		"content": "CBE introduces the latest equipment",
+		"targets": ["W1"],
+		"type": "normal",
+		"change": 2,
+		"round": 3,
+		"tags": []
+	},
+
+	{
+		"eventId": "3-lightning",
+		"content": "Lightning strikes Natural Science B/D, all experiments come to a halt",
+		"targets": ["E6"],
+		"type": "normal",
+		"change": -3,
+		"round": 3,
+		"tags": []
+	},
+
+	{
+		"eventId": "3-desks-chairs",
+		"content": "Desks and chairs of Undergraduate Branch Library replacement",
+		"targets": ["N10"],
+		"type": "normal",
+		"change": 1,
+		"round": 3,
+		"tags": []
+	},
+
+	{
+		"eventId": "3-cupramen",
+		"content": "1+1 event in Store B/D",
+		"targets": ["N12"],
+		"type": "normal",
+		"change": 1,
+		"round": 3,
+		"tags": []
+	},
+
+	{
+		"eventId": "4-burgerking",
+		"content": "Burger King enters Chang Young Shin Student Center",
+		"targets": ["N13-1", "N4", "N10", "N11K", "N12"],
+		"type": "normal",
+		"change": 1,
+		"round": 4,
+		"tags": []
+	},
+
+	{
+		"eventId": "4-frog",
+		"content": "Noise pollution rises as frog population surges",
+		"targets": ["DORM", "N14", "N16", "N19"],
+		"type": "normal",
+		"change": -2,
+		"round": 4,
+		"tags": []
+	},
+
+	{
+		"eventId": "4-air-conditioner",
+		"content": "Air conditioner of Sarang Hall, Somang Hall, and Areum Hall stopped accidently",
+		"targets": ["N14", "N16", "N19"],
+		"type": "normal",
+		"change": -1,
+		"round": 4,
+		"tags": []
+	},
+
+	{
+		"eventId": "4-fire",
+		"content": "A fire broke out on the Kaigrill and spread to the Eoeun Park",
+		"targets": ["W9", "PARK"],
+		"type": "normal",
+		"change": -5,
+		"round": 4,
+		"tags": ["emergency"]
+	},
+
+	{
+		"eventId": "4-rain-leak",
+		"content": "Rain leak in Industrial Design building",
+		"targets": ["N25"],
+		"type": "normal",
+		"change": -1,
+		"round": 4,
+		"tags": []
+	},
+
+	{
+		"eventId": "4-metal",
+		"content": "Heavy metal detection in the swimming pool",
+		"targets": ["E15"],
+		"type": "normal",
+		"change": -2,
+		"round": 4,
+		"tags": []
+	},
+
+	{
+		"eventId": "4-olive-young",
+		"content": "Plastic surgery and Olive Young enter Pappalardo Medical Center",
+		"targets": ["E21"],
+		"type": "normal",
+		"change": 2,
+		"round": 4,
+		"tags": []
+	},
+
+	{
+		"eventId": "4-puddle",
+		"content": "Heavy rain forms puddles at the Main Gate",
+		"targets": ["E1"],
+		"type": "normal",
+		"change": -1,
+		"round": 4,
+		"tags": []
+	},
+
+	{
+		"eventId": "5-tunnel",
+		"content": "Tunnel will be built in Eoeun Park",
+		"targets": ["PARK", "W9", "W6", "W4", "W8"],
+		"type": "normal",
+		"change": 1,
+		"round": 5,
+		"tags": []
+	},
+
+	{
+		"eventId": "5-air-condition",
+		"content": "Road construction-air condition on floor in north road",
+		"targets": ["N11P", "N12", "N11K"],
+		"type": "normal",
+		"change": 5,
+		"round": 5,
+		"tags": ["celebration"]
+	},
+
+	{
+		"eventId": "5-oil-field",
+		"content": "Under Creative Learning B/D, Academic Cultural Complex - oil field discovery during underground tunnel construction",
+		"targets": ["E11", "E9"],
+		"type": "normal",
+		"change": 3,
+		"round": 5,
+		"tags": []
+	},
+
+	{
+		"eventId": "5-lunch-box",
+		"content": "Store B/D - Lunch box sale at a low price",
+		"targets": ["N12", "N10"],
+		"type": "normal",
+		"change": 1,
+		"round": 5,
+		"tags": []
+	},
+
+	{
+		"eventId": "5-medical-hour",
+		"content": "Extended medical hours and open on Saturdays",
+		"targets": ["E21"],
+		"type": "normal",
+		"change": 1,
+		"round": 5,
+		"tags": []
+	},
+
+	{
+		"eventId": "5-acid-rain",
+		"content": "Carillon-corrosion by Acid Rain",
+		"targets": ["CARI"],
+		"type": "normal",
+		"change": -1,
+		"round": 5,
+		"tags": []
+	},
+
+	{
+		"eventId": "5-egg",
+		"content": "Audiences attacked performers with eggs during the performance",
+		"targets": ["E15"],
+		"type": "normal",
+		"change": -1,
+		"round": 5,
+		"tags": []
+	},
+
+	{
+		"eventId": "5-main-gate",
+		"content": "Design changes due to main gate construction",
+		"targets": ["E1"],
+		"type": "normal",
+		"change": 1,
+		"round": 5,
+		"tags": []
+	},
+
+	{
+		"eventId": "6-contaminant",
+		"content": "Duck pond population declines due to contaminants spilled by chemical experiments",
+		"targets": ["POND", "E1", "CARI", "E6", "E6-5"],
+		"type": "normal",
+		"change": -2,
+		"round": 6,
+		"tags": []
+	},
+
+	{
+		"eventId": "6-accident",
+		"content": "An autonomous car created in collaboration of 4 school department(CS, mechanical engineering, electronics, industrial design) had an accident on the endless road",
+		"targets": ["N25", "E3", "N7", "ROAD"],
+		"type": "normal",
+		"change": -2,
+		"round": 6,
+		"tags": []
+	},
+
+	{
+		"eventId": "6-pub",
+		"content": "Kaist Lounge turns into a pub at night",
+		"targets": ["N14", "N16", "N19"],
+		"type": "normal",
+		"change": 2,
+		"round": 6,
+		"tags": []
+	},
+
+	{
+		"eventId": "6-puma",
+		"content": "Puma escapes from zoo attacks north dormitory",
+		"targets": ["DORM", "BIKE"],
+		"type": "normal",
+		"change": -3,
+		"round": 6,
+		"tags": []
+	},
+
+	{
+		"eventId": "6-fire",
+		"content": "Sudden fire in Business & Technology Management B/D",
+		"targets": ["N22"],
+		"type": "normal",
+		"change": -3,
+		"round": 6,
+		"tags": []
+	},
+
+	{
+		"eventId": "6-cancel-tunnel",
+		"content": "Designation of green belt in Eoeun Park, cancel tunnel construction",
+		"targets": ["PARK"],
+		"type": "normal",
+		"change": -2,
+		"round": 6,
+		"tags": []
+	},
+
+	{
+		"eventId": "6-bowling",
+		"content": "Build bowling alley instead of billiard hall in post office building",
+		"targets": ["N11P"],
+		"type": "normal",
+		"change": 2,
+		"round": 6,
+		"tags": []
+	},
+
+	{
+		"eventId": "6-remodeling",
+		"content": "Remodeling west buildings",
+		"targets": ["W1", "W2"],
+		"type": "normal",
+		"change": 1,
+		"round": 6,
+		"tags": []
+	},
+
+	{
+		"eventId": "7-wild-dog",
+		"content": "Wild dogs that escaped from Chungnam University on the West occupied dormitories and resulted in increase of homeless students at Academic Cultural Complex",
+		"targets": ["W1", "W2", "ROAD", "E9", "W6", "W4"],
+		"type": "normal",
+		"change": -3,
+		"round": 7,
+		"tags": []
+	},
+
+	{
+		"eventId": "7-moving-sidewalk",
+		"content": "Moving sidewalk construction in endless road",
+		"targets": ["ROAD", "W6", "W4", "N19"],
+		"type": "normal",
+		"change": 3,
+		"round": 7,
+		"tags": []
+	},
+
+	{
+		"eventId": "7-samsung",
+		"content": "Samsung has provided a large sum of money to department (Industrial Engineering, business and technology, Industrial design)",
+		"targets": ["N25", "N22", "E2"],
+		"type": "normal",
+		"change": 3,
+		"round": 7,
+		"tags": []
+	},
+
+	{
+		"eventId": "7-typhoon",
+		"content": "Pillar collapse due to typhoon",
+		"targets": ["N3", "N4"],
+		"type": "normal",
+		"change": -3,
+		"round": 7,
+		"tags": []
+	},
+
+	{
+		"eventId": "7-road-freezing",
+		"content": "Road freezing due to rain after snow",
+		"targets": ["ROAD"],
+		"type": "normal",
+		"change": -2,
+		"round": 7,
+		"tags": []
+	},
+
+	{
+		"eventId": "7-ceiling",
+		"content": "Heavy snowfall collapsed ceiling of building",
+		"targets": ["N13"],
+		"type": "normal",
+		"change": -2,
+		"round": 7,
+		"tags": []
+	},
+
+	{
+		"eventId": "7-mistake",
+		"content": "During prescription process, side effects occur from mistake. It cause business suspension in Pappalardo",
+		"targets": ["E21"],
+		"type": "normal",
+		"change": -1,
+		"round": 7,
+		"tags": []
+	},
+
+	{
+		"eventId": "7-stock",
+		"content": "Business & Technology department wins first prize in National University Student Stock Investment Contest",
+		"targets": ["N22"],
+		"type": "normal",
+		"change": 3,
+		"round": 7,
+		"tags": []
+	},
+
+	{
+		"eventId": "8-hyperlink",
+		"content": "Introduced hyperlink for the first time in Korea(taxi stand to main gate)",
+		"targets": ["TAXI", "N13", "N13-1", "N10", "E1"],
+		"type": "normal",
+		"change": 3,
+		"round": 8,
+		"tags": []
+	},
+
+	{
+		"eventId": "8-ariana-grande",
+		"content": "Celebrating for cultural day, performance of Ariana Grande, Billie Eilish, Migos, Adele, BTS, Metallica, Coldplay at KAIST",
+		"targets": ["E15", "N13", "N13-1", "W9"],
+		"type": "normal",
+		"change": 5,
+		"round": 8,
+		"tags": ["celebration"]
+	},
+
+	{
+		"eventId": "8-sink-hole",
+		"content": "Sink hole in Creative Learning B/D, Creative Learning B/D collapsed",
+		"targets": ["E11", "E9"],
+		"type": "all",
+		"change": [
+			{
+				"type": "multiplier",
+				"change": 0.5,
+				"targets": ["E9"]
+			},
+
+			{
+				"type": "fixed",
+				"change": 0,
+				"targets": ["E11"]
+			}
+		],
+		"round": 8,
+		"tags": ["emergency"]
+	},
+
+	{
+		"eventId": "8-benzene",
+		"content": "Benzene leak during experiment",
+		"targets": ["E6", "E6-5"],
+		"type": "normal",
+		"change": -1,
+		"round": 8,
+		"tags": []
+	},
+
+	{
+		"eventId": "8-graphine",
+		"content": "The next generation display using graphine, invented in collaboration between material science department and electronic department",
+		"targets": ["W1", "E3"],
+		"type": "normal",
+		"change": 2,
+		"round": 8,
+		"tags": []
+	},
+
+	{
+		"eventId": "8-barcelona",
+		"content": "FC barcelona vs Juventus FC in Stadium",
+		"targets": ["E17"],
+		"type": "normal",
+		"change": 3,
+		"round": 8,
+		"tags": []
+	},
+
+	{
+		"eventId": "8-homeplus",
+		"content": "Opening of 24h Home Plus in basement of Student Center",
+		"targets": ["W2"],
+		"type": "normal",
+		"change": 1,
+		"round": 8,
+		"tags": []
+	},
+
+	{
+		"eventId": "8-white-heron",
+		"content": "Noise pollution complaints from students near North dormitory building because of white heron",
+		"targets": ["DORM"],
+		"type": "normal",
+		"change": -1,
+		"round": 8,
+		"tags": []
+	}
 ]

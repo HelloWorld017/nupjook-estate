@@ -12,22 +12,31 @@ class Event {
 	}
 
 	execute() {
-		this.targets.forEach(buildingUid => {
-			switch(this.type) {
-				case 'normal':
-					const changeAmount = this.game.buildings[buildingUid].initialPrice === 4000 ? 400 : 300;
-					this.game.buildings[buildingUid].price += this.change * changeAmount;
-					break;
+		const executeOne = (targets, type, change) => {
+			targets.forEach(buildingUid => {
+				switch(type) {
+					case 'normal':
+						const changeAmount = this.game.buildings[buildingUid].initialPrice === 4000 ? 400 : 300;
+						this.game.buildings[buildingUid].price += change * changeAmount;
+						break;
 
-				case 'multiplier':
-					this.game.buildings[buildingUid].price *= this.change;
-					break;
+					case 'multiplier':
+						this.game.buildings[buildingUid].price *= change;
+						break;
 
-				case 'fixed':
-					this.game.buildings[buildingUid].price = this.change;
-					break;
-			}
-		});
+					case 'fixed':
+						this.game.buildings[buildingUid].price = change;
+						break;
+
+					case 'all':
+						change.forEach(changeObject => {
+							executeOne(changeObject.targets, changeObject.type, changeObject.change);
+						});
+				}
+			});
+		};
+
+		executeOne(this.targets, this.type, this.change);
 	}
 
 	get eventData() {

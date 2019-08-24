@@ -2,5 +2,6 @@
 	"initial-money": 20000,
 	"max-round": 8,
 	"round-minutes": 10,
-	"admin-token": ""
+	"admin-token": "",
+	"max-journal-replay": 100
 }

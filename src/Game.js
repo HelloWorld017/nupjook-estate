@@ -10,6 +10,8 @@ const UserAdmin = require('./UserAdmin');
 
 class Game {
 	constructor() {
+		this.state = 'not-started';
+
 		this.config = config;
 		this.buildings = {};
 		this.users = {};
@@ -35,19 +37,31 @@ class Game {
 	}
 
 	start() {
+		this.state = 'playing';
 		this.nextRound();
 		this.update();
 	}
 
+	pause() {
+		this.state = 'paused';
+	}
+
+	resume() {
+		this.state = 'playing';
+	}
+
 	update() {
-		this.tick++;
-		this.nextRoundTick--;
+		if(this.state === 'playing') {
+			this.tick++;
+			this.nextRoundTick--;
+		}
 
 		this.broadcastPacket(
 			'game.tick',
 			{
 				tick: this.tick,
-				roundLeft: this.nextRoundTick
+				roundLeft: this.nextRoundTick,
+				gameState: this.state
 			}
 		);
 
@@ -67,10 +81,15 @@ class Game {
 
 		this.addJournal('game.newuser', {
 			name,
-			uid: user.uid
+			uid: user.uid,
+			token: user.token
 		});
 
-		return user.token;
+		this.broadcastPacket('user.updateAsAdmin', {
+			user: user.userDataSpecific
+		});
+
+		return user;
 	}
 
 	addAdmin() {
@@ -243,7 +262,7 @@ class Game {
 	}
 
 	finish() {
-
+		this.state = 'finished';
 	}
 
 	get buildingsList() {

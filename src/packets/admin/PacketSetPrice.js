@@ -2,18 +2,20 @@ const AdminPacket = require('./AdminPacket');
 
 class PacketSetPrice extends AdminPacket {
 	doHandle({buildingUid, price}) {
+		price = parseInt(price);
+
 		const building = this.game.buildings[buildingUid];
 		if(!building) return {
 			ok: false,
 			reason: "No such building"
 		};
 
-		if(!isFinite(price)) return {
+		if(!isFinite(price) || price < 0) return {
 			ok: false,
 			reason: "Wrong arguments"
 		};
 
-		this.game.buildings[buildingUid].price = price;
+		this.game.buildings[buildingUid].price = parseInt(price);
 
 		this.game.addJournal(
 			'admin.setPrice',
@@ -21,6 +23,11 @@ class PacketSetPrice extends AdminPacket {
 				buildingUid,
 				price
 			}
+		);
+
+		this.game.broadcastPacket(
+			'building.update',
+			{building: this.game.buildings[buildingUid].buildingData}
 		);
 
 		return {

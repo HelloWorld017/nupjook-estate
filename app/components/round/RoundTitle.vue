@@ -1,7 +1,7 @@
 <template>
 	<div class="RoundTitle Section">
 		<h1 class="RoundTitle__current">ROUND {{roundNumber}}</h1>
-		<div class="RoundTitle__progress Progress">
+		<div class="RoundTitle__progress Progress" v-if="this.roundNumber <= this.maxRounds">
 			<div class="Progress__bar" :style="progressStyle"></div>
 		</div>
 	</div>
@@ -41,9 +41,21 @@
 				return this.$store.state.round;
 			},
 
+			maxRounds() {
+				return this.$store.state.maxRounds;
+			},
+
 			progressStyle() {
-				const progress = (this.roundNumber / this.$store.state.maxRounds) * 100;
+				const progress = (this.roundNumber / this.maxRounds) * 100;
 				return `width: ${progress}%`;
+			},
+
+			roundTitle() {
+				if(this.roundNumber <= this.maxRounds) {
+					return `ROUND ${this.roundNumber}`;
+				}
+
+				return `FINISHED!`;
 			}
 		}
 	}

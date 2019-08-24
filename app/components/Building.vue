@@ -48,7 +48,7 @@
 		}
 
 		&--large {
-			flex-basis: 80px;
+			flex-basis: 90px;
 			font-size: 2rem;
 			text-align: center;
 			padding: 0;
@@ -97,7 +97,8 @@
 
 			large: Boolean,
 			noprice: Boolean,
-			place: Boolean
+			place: Boolean,
+			alwaysown: Boolean
 		},
 
 		computed: {
@@ -106,6 +107,8 @@
 			},
 
 			owning() {
+				if(this.alwaysown) return true;
+
 				return this.$store.state.user.uid === this.building.owner;
 			},
 

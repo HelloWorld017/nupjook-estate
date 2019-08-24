@@ -1,13 +1,17 @@
 import PacketBuildingUpdate from "./PacketBuildingUpdate";
+import PacketGameJournal from "./PacketGameJournal";
 import PacketNextRound from "./PacketNextRound";
 import PacketTick from "./PacketTick";
 import PacketUserUpdate from "./PacketUserUpdate";
+import PacketUserUpdateAdmin from "./PacketUserUpdateAdmin";
 
 const packets = [
 	PacketBuildingUpdate,
+	PacketGameJournal,
 	PacketNextRound,
 	PacketTick,
-	PacketUserUpdate
+	PacketUserUpdate,
+	PacketUserUpdateAdmin
 ];
 
 export default function applyPackets(socket, store) {

@@ -8,8 +8,6 @@ const path = require('path');
 const Game = require('./src/Game');
 
 const game = new Game();
-// FIXME remove below before production
-setTimeout(() => game.start(), 5000);
 
 const port = parseInt(process.env.PORT || '3000');
 const app = express();

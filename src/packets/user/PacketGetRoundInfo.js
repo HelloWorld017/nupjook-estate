@@ -9,6 +9,7 @@ class PacketGetRoundInfo extends UserPacket {
 			round: this.game.round,
 			tick: this.game.tick,
 			roundLeft: this.game.nextRoundTick,
+			gameState: this.game.state,
 			labyrinth: this.game.enabledLabyrinth ?
 				{
 					key: this.game.enabledLabyrinth.key,

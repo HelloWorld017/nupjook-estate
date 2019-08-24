@@ -1,6 +1,10 @@
 <template>
 	<main id="app">
-		<template v-if="user">
+		<template v-if="user && user.isAdmin">
+			<admin-view></admin-view>
+		</template>
+
+		<template v-else-if="user">
 			<sidebar></sidebar>
 			<main-view></main-view>
 		</template>
@@ -25,7 +29,6 @@
 		outline: none;
 		color: #f1f2f3;
 		font-family: 'Noto Sans KR', sans-serif;
-		font-weight: 200px;
 	}
 
 	.FadeList {
@@ -96,6 +99,11 @@
 			}
 		}
 	}
+
+	*::selection {
+		background: rgba(32, 32, 32, .8);
+		color: #fff;
+	}
 </style>
 
 <style lang="less" scoped>
@@ -105,12 +113,14 @@
 </style>
 
 <script>
+	import AdminView from "./components/admin/AdminView.vue";
 	import Login from "./components/Login.vue";
 	import MainView from "./components/MainView.vue";
 	import Sidebar from "./components/Sidebar.vue";
 
 	export default {
 		components: {
+			AdminView,
 			Login,
 			MainView,
 			Sidebar

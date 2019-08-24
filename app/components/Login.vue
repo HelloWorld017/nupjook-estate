@@ -96,14 +96,22 @@
 
 				const initRoundInfo = await this.$packet('getRoundInfo');
 				this.$store.dispatch('initRound', initRoundInfo);
+
+				if(user.isAdmin) {
+					const {journals} = await this.$packet('getJournals');
+					this.$store.commit('admin/addLogs', journals);
+
+					const {users} = await this.$packet('getUsers');
+					this.$store.commit('admin/updateUsers', users);
+				}
 			}
 		},
 
 		//FIXME Remove this before production
 		mounted() {
-			this.uid = 'admin';
+			/*this.uid = 'admin';
 			this.password = 'asdf';
-			this.authenticate();
+			this.authenticate();*/
 		},
 
 		components: {

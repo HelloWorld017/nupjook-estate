@@ -1,3 +1,5 @@
+import "izitoast/dist/css/iziToast.css";
+
 import openSocket from "./src/socket";
 import createStore from "./src/store";
 

@@ -3,17 +3,19 @@ const AdminPacket = require('./AdminPacket');
 class PacketAddUser extends AdminPacket {
 	doHandle({name}) {
 		try {
-			this.game.addUser(name);
+			const {uid, token} = this.game.addUser(name);
+
+			return {
+				ok: true,
+				uid,
+				token
+			};
 		} catch(e) {
 			return {
 				ok: false,
 				reason: e.message
 			};
 		}
-
-		return {
-			ok: true
-		};
 	}
 
 	static get name() {
