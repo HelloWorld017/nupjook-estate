@@ -1,6 +1,6 @@
 <template>
 	<aside class="Sidebar">
-		<h1 class="Sidebar__name">
+		<h1 class="Sidebar__name" @click="deauthenticate">
 			{{name}}<br>
 			<span class="Sidebar__round">
 				Round {{round}}
@@ -34,6 +34,8 @@
 		font-family: 'Fira Sans', sans-serif;
 
 		&__name {
+			cursor: pointer;
+
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -80,6 +82,12 @@
 
 			round() {
 				return this.$store.state.round;
+			}
+		},
+
+		methods: {
+			deauthenticate() {
+				localStorage.removeItem('authenticate');
 			}
 		},
 

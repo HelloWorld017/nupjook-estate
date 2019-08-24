@@ -9,6 +9,7 @@
 				<tab-button @click="tabIndex = 0" :active="tabIndex === 0">Map + Labyrinth</tab-button>
 				<tab-button @click="tabIndex = 1" :active="tabIndex === 1">Map + Table</tab-button>
 				<tab-button @click="tabIndex = 2" :active="tabIndex === 2">Table + Labyrinth</tab-button>
+				<tab-button @click="tabIndex = 3" :active="tabIndex === 3">Labyrinth + Table</tab-button>
 			</div>
 		</section>
 
@@ -42,7 +43,13 @@
 		}
 
 		&__tab {
+			display: flex;
 			margin: 10px 0;
+
+			& > * {
+				margin: 0 3px;
+				font-size: .6rem;
+			}
 		}
 	}
 </style>
@@ -69,6 +76,7 @@
 					case 0:
 					case 1: return 'kaimap';
 					case 2: return 'price-table';
+					case 3: return 'labyrinth';
 				}
 			},
 
@@ -77,6 +85,7 @@
 					case 0: return 'labyrinth';
 					case 1: return 'price-table';
 					case 2: return 'labyrinth';
+					case 3: return 'price-table';
 				}
 			}
 		},

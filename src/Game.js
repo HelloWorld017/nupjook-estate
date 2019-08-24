@@ -165,6 +165,8 @@ class Game {
 
 		this.journals.push(journalObject);
 		this.broadcastPacket('game.journal', journalObject, 'admin');
+
+		this.saveGame();
 	}
 
 	async saveGame() {

@@ -5,11 +5,11 @@
 		</stat>
 
 		<stat key-text="Money">
-			{{money}}
+			<money :current="money" updown></money>
 		</stat>
 
 		<stat key-text="Valuation">
-			{{valuation}}
+			<money :current="valuation" updown></money>
 		</stat>
 	</header>
 </template>
@@ -24,6 +24,7 @@
 </style>
 
 <script>
+	import Money from "./Money.vue";
 	import Stat from "./Stat.vue";
 
 	export default {
@@ -42,6 +43,7 @@
 		},
 
 		components: {
+			Money,
 			Stat
 		}
 	};

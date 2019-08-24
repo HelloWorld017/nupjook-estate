@@ -88,6 +88,11 @@
 					return;
 				}
 
+				localStorage.setItem('authenticate', JSON.stringify({
+					uid: this.uid,
+					password: this.password
+				}));
+
 				const {buildings} = await this.$packet('getBuildings');
 				this.$store.commit('updateBuildings', buildings);
 
@@ -109,9 +114,14 @@
 
 		//FIXME Remove this before production
 		mounted() {
-			/*this.uid = 'admin';
-			this.password = 'asdf';
-			this.authenticate();*/
+			const authInfo = localStorage.getItem('authenticate');
+			if(authInfo) {
+				const parsed = JSON.parse(authInfo);
+
+				this.uid = parsed.uid;
+				this.password = parsed.password;
+				this.authenticate();
+			}
 		},
 
 		components: {

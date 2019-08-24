@@ -9,9 +9,15 @@
 </template>
 
 <style lang="less" scoped>
+	.AnimNumber {
+		span {
+			display: inline-block;
+		}
+	}
+
 	.Number {
 		&-enter {
-			transform: translateY(-60px);
+			transform: translateY(-10px);
 			opacity: 0;
 
 			&-active {
@@ -25,7 +31,7 @@
 			}
 
 			&-to {
-				transform: translateY(60px);
+				transform: translateY(10px);
 				opacity: 0;
 			}
 		}

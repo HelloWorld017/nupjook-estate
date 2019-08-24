@@ -26,4 +26,8 @@ window.SERVER_ADDR = 'localhost:3000';
 			return h(App);
 		}
 	});
+
+	window.$nupjooksEstate = {
+		store, socket
+	};
 })();

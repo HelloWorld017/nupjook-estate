@@ -42,11 +42,15 @@
 				<div class="AdminView__options">
 					<hold-button @hold="startPlayPauseGame">{{startPlayPauseText}}</hold-button>
 					<class-list></class-list>
+					<drop-class @drop="inspectingUser = $event">
+						Drop to inspect user
+					</drop-class>
 				</div>
 			</div>
-
-			<inspect class="AdminView__inspect"></inspect>
 		</section>
+		<inspect class="AdminView__inspect" v-if="inspectingUser"
+			:uid="inspectingUser" @close="inspectingUser = null">
+		</inspect>
 	</div>
 </template>
 
@@ -113,6 +117,10 @@
 			& > .HoldButton {
 				margin-right: 20px;
 			}
+
+			& > .ClassList {
+				flex: 1;
+			}
 		}
 	}
 
@@ -140,6 +148,7 @@
 <script>
 	import BuildingTable from "./BuildingTable.vue";
 	import ClassList from "./ClassList.vue";
+	import DropClass from "./DropClass.vue";
 	import HoldButton from "./HoldButton.vue";
 	import Inspect from "./Inspect.vue";
 	import JournalList from "./JournalList.vue";
@@ -153,7 +162,8 @@
 				addTimeMinutes: 0,
 				addUserName: '',
 				setPriceUid: '',
-				setPricePrice: 0
+				setPricePrice: 0,
+				inspectingUser: null
 			};
 		},
 
@@ -219,6 +229,7 @@
 		components: {
 			BuildingTable,
 			ClassList,
+			DropClass,
 			HoldButton,
 			Inspect,
 			JournalList,

@@ -1,6 +1,6 @@
 <template>
 	<div class="RoundTitle Section">
-		<h1 class="RoundTitle__current">ROUND {{roundNumber}}</h1>
+		<h1 class="RoundTitle__current">{{roundTitle}}</h1>
 		<div class="RoundTitle__progress Progress" v-if="this.roundNumber <= this.maxRounds">
 			<div class="Progress__bar" :style="progressStyle"></div>
 		</div>

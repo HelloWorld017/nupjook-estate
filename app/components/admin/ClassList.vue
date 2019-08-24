@@ -11,11 +11,12 @@
 
 <style lang="less" scoped>
 	.ClassList {
-		cursor: move;
 		margin-top: 10vh;
 
 		&__class {
+			cursor: move;
 			padding: 10px 20px;
+			margin: 5px 0;
 			background: #e8e8e8;
 			color: #202020;
 			font-family: 'Noto Sans KR', sans-serif;

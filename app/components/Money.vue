@@ -3,7 +3,7 @@
 		<anim-number v-for="(text, index) in computedText"
 			:class="index === computedText.length - 1 && lastStyle ? lastStyle : ''"
 			:style="index === computedText.length - 1 ? lastSpace : ''"
-			:number="text" :key="computedText.length - index">
+			:number="text" :key="`${index}`">
 		</anim-number>
 	</transition-group>
 </template>

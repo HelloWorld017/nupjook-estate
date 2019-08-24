@@ -13,6 +13,16 @@ class User {
 	}
 
 	connectSocket(socket) {
+		if(this.socket) {
+			this.game.addJournal(
+				'user.tryConnectWhileConnected',
+				{
+					userUid: this.uid
+				}
+			);
+			this.socket.disconnect(true);
+		}
+
 		this.game.addJournal(
 			'user.connect',
 			{
