@@ -1,7 +1,9 @@
 const config = require('../config.json');
 const buildings = require('../data/buildings.json');
 const events = require('../data/events.json');
+const fs = require('fs');
 const labyrinth = require('../data/labyrinth.json');
+const path = require('path');
 
 const Building = require('./Building');
 const Event = require('./Event');
@@ -156,12 +158,15 @@ class Game {
 
 		const journalObject = {
 			name: logName,
-			payload,
-			state: {
-				users: this.usersList.map(v => v.userData),
-				buildings: this.buildingsList.map(v => v.buildingData)
-			}
+			payload
 		};
+
+		if(this.config['journal-state']) {
+			journalObject.state = {
+				users: this.usersList.map(v => v.userData),
+				buildings: this.buildingsList.map(v => v.buildingDataMinimal)
+			};
+		}
 
 		this.journals.push(journalObject);
 		this.broadcastPacket('game.journal', journalObject, 'admin');
@@ -170,10 +175,11 @@ class Game {
 	}
 
 	async saveGame() {
+		if(!this.config['save-enabled']) return;
 		let savedest = './savedata';
 
 		try {
-			await fs.access('./savedata');
+			await fs.promises.access('./savedata');
 		} catch(e) {
 			try {
 				await fs.promises.mkdir('./savedata');
@@ -183,22 +189,28 @@ class Game {
 		}
 
 		const date = new Date();
-		const saveLocation = path.join(savedest, `save-${
-			date.getFullYear()}. ${
-			date.getMonth() + 1}. ${
-			date.getDate()}. ${
-			date.getHours()}-${
-			date.getMinutes()}-${
-			date.getSeconds()}.json`
+		const saveLocation = path.join(savedest,
+			this.config['save-only-one'] ?
+				'savedata.json' :
+				`save-${
+				date.getFullYear()}. ${
+				date.getMonth() + 1}. ${
+				date.getDate()}. ${
+				date.getHours()}-${
+				date.getMinutes()}-${
+				date.getSeconds()}.json`
 		);
 
 		const saveObject = {
 			journals: this.journals,
 			users: this.usersList.map(user => user.userDataSpecific),
-			buildings: this.buildingsList.map(building => building.buildingData),
+			buildings: this.buildingsList
+				.map(building => building.buildingDataMinimal),
 			round: this.round,
 			tick: this.tick,
-			nextRoundTick: this.nextRoundTick
+			nextRoundTick: this.nextRoundTick,
+			state: this.state,
+			timestamp: date.getTime()
 		};
 
 		await fs.promises.writeFile(saveLocation, JSON.stringify(saveObject, null, '\t'));
@@ -213,6 +225,12 @@ class Game {
 		this.tick = saveObject.tick;
 		this.nextRoundTick = saveObject.nextRoundTick;
 		this.round = saveObject.round;
+		this.state = saveObject.state;
+		this.enabledLabyrinth = labyrinth.reduce((prev, curr) => {
+			if(curr.round > this.round) return prev;
+			if(prev.round > curr.round) return prev;
+			return curr;
+		}, null);
 
 		saveObject.users.forEach(userData => {
 			const user = new User(this, userData.name);

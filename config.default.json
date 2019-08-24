@@ -3,5 +3,8 @@
 	"max-round": 8,
 	"round-minutes": 10,
 	"admin-token": "",
-	"max-journal-replay": 100
+	"journal-state": false,
+	"max-journal-replay": 100,
+	"save-enabled": true,
+	"save-only-one": true
 }

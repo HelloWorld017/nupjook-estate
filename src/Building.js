@@ -25,7 +25,16 @@ class Building {
 			group: this.group,
 			owner: this.owner,
 			position: this.position
-		}
+		};
+	}
+
+	get buildingDataMinimal() {
+		return {
+			uid: this.uid,
+			lastPrice: this.lastPrice,
+			price: this.price,
+			owner: this.owner
+		};
 	}
 }
 

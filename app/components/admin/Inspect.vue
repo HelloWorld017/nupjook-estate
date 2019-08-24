@@ -23,6 +23,12 @@
 		height: 100vh;
 
 		background: rgba(0, 0, 0, .8);
+
+		&__row {
+			color: #fff;
+		}
+
+		// TODO
 	}
 </style>
 
