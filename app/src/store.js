@@ -101,8 +101,8 @@ export default () => {
 
 			labyrinthUrl(state) {
 				if(!state.labyrinth) return '';
-				
-				return `//${SERVER_ADDR}/labyrinth/${state.labyrinth.round}?key=${state.labyrinth.key}`;
+
+				return `/labyrinth/${state.labyrinth.round}?key=${state.labyrinth.key}`;
 			},
 
 			roundLeft(state) {

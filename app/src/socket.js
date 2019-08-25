@@ -3,7 +3,7 @@ import iziToast from "izitoast";
 import packets from "./packets";
 
 export default store => new Promise(resolve => {
-	const socket = io(SERVER_ADDR);
+	const socket = io();
 	packets(socket, store);
 
 	socket.on('connect', () => resolve(socket));
