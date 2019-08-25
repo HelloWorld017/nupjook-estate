@@ -45,8 +45,14 @@ class User {
 		packets(this.game, socket, packets.user, this);
 	}
 
+	notifyUpdate() {
+		this.game.broadcastPacket('user.updateAsAdmin', {user: this.userDataSpecific}, 'admin');
+		if(this.socket)
+			this.socket.emit('user.update', {user: this.userData});
+	}
+
 	buyBuilding(buildingUid) {
-		if(!this.game.buildings[buildingUid])
+		if(!this.game.buildings[buildingUid] || !this.game.buildings[buildingUid].uid)
 			throw new Error("No such building!");
 
 		if(this.game.buildings[buildingUid].owner !== null)
@@ -72,9 +78,7 @@ class User {
 		);
 
 		this.game.broadcastPacket('building.update', {building: buildingData});
-		this.game.broadcastPacket('user.updateAsAdmin', {user: this.userDataSpecific}, 'admin');
-		if(this.socket)
-			this.socket.emit('user.update', {user: this.userData});
+		this.notifyUpdate();
 	}
 
 	sellBuilding(buildingUid) {
@@ -97,9 +101,7 @@ class User {
 		);
 
 		this.game.broadcastPacket('building.update', {building: buildingData});
-		this.game.broadcastPacket('user.updateAsAdmin', {user: this.userDataSpecific}, 'admin');
-		if(this.socket)
-			this.socket.emit('user.update', {user: this.userData});
+		this.notifyUpdate();
 	}
 
 	get userData() {

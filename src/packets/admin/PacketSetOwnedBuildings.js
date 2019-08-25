@@ -3,7 +3,7 @@ const AdminPacket = require('./AdminPacket');
 class PacketSetOwnedBuildings extends AdminPacket {
 	doHandle({userUid, buildings}) {
 		const user = this.game.users[userUid];
-		if(!user) return {
+		if(!user || !user.uid) return {
 			ok: false,
 			reason: "No such user"
 		};
@@ -12,6 +12,7 @@ class PacketSetOwnedBuildings extends AdminPacket {
 		const canSet = buildings.every(buildingUid => {
 			if(
 				!this.game.buildings[buildingUid] ||
+				!this.game.buildings[buildingUid].uid ||
 				this.game.buildings[buildingUid].owner
 			) {
 				failingBuilding = buildingUid;
@@ -28,6 +29,10 @@ class PacketSetOwnedBuildings extends AdminPacket {
 			};
 		}
 
+		buildings.forEach(buildingUid => {
+			this.game.buildings[buildingUid].owner = userUid;
+		});
+
 		user.buildings = buildings;
 
 		this.game.addJournal(
@@ -36,6 +41,7 @@ class PacketSetOwnedBuildings extends AdminPacket {
 				userUid, buildings
 			}
 		);
+		user.notifyUpdate();
 
 		return {
 			ok: true

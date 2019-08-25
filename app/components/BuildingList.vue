@@ -1,6 +1,7 @@
 <template>
 	<div class="BuildingList">
-		<building v-for="building in buildings" :key="building" :uid="building" large noprice>
+		<building v-for="building in buildings" :key="building" :uid="building"
+			:alwaysown="!!buildingList" large noprice>
 		</building>
 	</div>
 </template>
@@ -22,8 +23,14 @@
 	import Building from "./Building.vue";
 
 	export default {
+		props: [
+			'buildingList'
+		],
+
 		computed: {
 			buildings() {
+				if(this.buildingList) return this.buildingList;
+
 				return this.$store.state.user.buildings;
 			}
 		},

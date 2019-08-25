@@ -5,7 +5,7 @@ class PacketSetPrice extends AdminPacket {
 		price = parseInt(price);
 
 		const building = this.game.buildings[buildingUid];
-		if(!building) return {
+		if(!building || !building.uid) return {
 			ok: false,
 			reason: "No such building"
 		};

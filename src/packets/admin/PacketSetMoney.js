@@ -5,7 +5,7 @@ class PacketSetMoney extends AdminPacket {
 		money = parseInt(money);
 
 		const user = this.game.users[userUid];
-		if(!user) return {
+		if(!user || !user.uid) return {
 			ok: false,
 			reason: "No such user"
 		};
@@ -23,6 +23,7 @@ class PacketSetMoney extends AdminPacket {
 				userUid, money
 			}
 		);
+		user.notifyUpdate();
 
 		return {
 			ok: true

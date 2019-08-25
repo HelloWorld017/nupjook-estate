@@ -1,7 +1,12 @@
 <template>
-	<input :type="type" v-model="_value" class="TextInput"
+	<input v-if="!multiline" :type="type" v-model="_value" class="TextInput"
 		autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
 		@blur="$emit('blur', $event)">
+
+	<textarea v-else v-model="_value" class="TextInput"
+		autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+		@blur="$emit('blur', $event)">
+	</textarea>
 </template>
 
 <style lang="less" scoped>
@@ -13,6 +18,7 @@
 		border: none;
 		border-bottom: 2px solid #202020;
 		outline: none;
+		resize: none;
 
 		&::selection {
 			background: #202020;
@@ -33,7 +39,8 @@
 			type: {
 				type: String,
 				default: 'text'
-			}
+			},
+			multiline: Boolean
 		},
 
 		computed: {

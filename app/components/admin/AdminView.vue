@@ -123,7 +123,9 @@
 			}
 		}
 	}
+</style>
 
+<style lang="less">
 	.EditRow {
 		display: flex;
 		align-items: center;
@@ -141,6 +143,28 @@
 
 		button {
 			width: 120px;
+		}
+
+		&--vertical {
+			flex-direction: column;
+
+			button {
+				align-self: flex-end;
+				width: auto;
+				margin-right: 10px;
+				margin-top: 10px;
+			}
+		}
+
+		&--vertical & {
+			&__name {
+				align-self: flex-start;
+			}
+
+			&__edit {
+				margin-top: 10px;
+				align-self: stretch;
+			}
 		}
 	}
 </style>

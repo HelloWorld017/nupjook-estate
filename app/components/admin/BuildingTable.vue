@@ -137,8 +137,8 @@
 					return buildings;
 
 				return buildings.filter(building => {
-					if(building.uid.includes(this.search)) return true;
-					if(building.name.includes(this.search)) return true;
+					if(building.uid.toLowerCase().includes(this.search.toLowerCase())) return true;
+					if(building.name.toLowerCase().includes(this.search.toLowerCase())) return true;
 					return false;
 				});
 			},
