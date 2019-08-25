@@ -29,10 +29,19 @@ class PacketSetOwnedBuildings extends AdminPacket {
 			};
 		}
 
+		const updatedBuildings = [];
+
 		buildings.forEach(buildingUid => {
+			updatedBuildings.push(buildingUid);
 			this.game.buildings[buildingUid].owner = userUid;
 		});
 
+		user.buildings.forEach(buildingUid => {
+			updatedBuildings.push(buildingUid);
+			this.game.buildings[buildingUid].owner = null;
+		});
+
+		const uniqueUpdatedBuildings = updatedBuildings.filter((item, index, array) => array.indexOf(item) === index);
 		user.buildings = buildings;
 
 		this.game.addJournal(
@@ -42,6 +51,9 @@ class PacketSetOwnedBuildings extends AdminPacket {
 			}
 		);
 		user.notifyUpdate();
+		uniqueUpdatedBuildings.forEach(buildingUid => {
+			this.game.broadcastPacket('building.update', {building: this.game.buildings[buildingUid].buildingData});
+		});
 
 		return {
 			ok: true

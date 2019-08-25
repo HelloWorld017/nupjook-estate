@@ -40,7 +40,7 @@
 			position: absolute;
 			bottom: 20px;
 			right: 30px;
-			font-family: 'Noto Sans CJK KR', sans-serif;
+			font-family: 'Noto Sans KR', sans-serif;
 			font-weight: 900;
 			font-size: 1.7rem;
 		}

@@ -48,9 +48,12 @@
 				</div>
 			</div>
 		</section>
-		<inspect class="AdminView__inspect" v-if="inspectingUser"
-			:uid="inspectingUser" @close="inspectingUser = null">
-		</inspect>
+
+		<transition name="Opacity">
+			<inspect class="AdminView__inspect" v-if="inspectingUser"
+				:uid="inspectingUser" @close="inspectingUser = null">
+			</inspect>
+		</transition>
 	</div>
 </template>
 

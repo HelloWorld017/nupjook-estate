@@ -34,6 +34,10 @@
 				<building-list :building-list="user.buildings"></building-list>
 			</div>
 		</div>
+
+		<a class="Inspect__close" @click="$emit('close')">
+			&times;
+		</a>
 	</div>
 </template>
 
@@ -102,6 +106,18 @@
 
 		&__bldglist {
 			flex: 1;
+		}
+
+		&__close {
+			cursor: pointer;
+			position: absolute;
+			top: 10vh;
+			right: 10vw;
+
+			color: #808080;
+			font-family: 'Noto Sans KR', sans-serif;
+			font-weight: 100;
+			font-size: 2.3rem;
 		}
 	}
 </style>

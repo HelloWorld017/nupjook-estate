@@ -24,7 +24,7 @@
 		&__text {
 			margin-top: 20px;
 			color: #fff;
-			font-family: 'Noto Sans CJK KR', sans-serif;
+			font-family: 'Noto Sans KR', sans-serif;
 			font-size: 2rem;
 			text-transform: uppercase;
 		}
