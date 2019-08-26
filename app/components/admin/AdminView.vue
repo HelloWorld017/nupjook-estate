@@ -1,7 +1,7 @@
 <template>
 	<div class="AdminView">
 		<aside class="AdminView__sidebar">
-			<h1 class="AdminView__title">
+			<h1 class="AdminView__title" @click="deauthenticate">
 				<span class="AdminView__round">
 					{{round}}R
 				</span>
@@ -71,6 +71,7 @@
 		}
 
 		&__title {
+			cursor: pointer;
 			margin: 0;
 			padding: 20px 0;
 			text-align: center;
@@ -250,6 +251,10 @@
 					this.$packet('setPrice', {buildingUid: this.setPriceUid, price: this.setPricePrice}),
 					'setting price'
 				);
+			},
+
+			deauthenticate() {
+				localStorage.removeItem('authenticate');
 			}
 		},
 

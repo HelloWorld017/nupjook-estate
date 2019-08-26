@@ -13,7 +13,10 @@ class PacketSetOwnedBuildings extends AdminPacket {
 			if(
 				!this.game.buildings[buildingUid] ||
 				!this.game.buildings[buildingUid].uid ||
-				this.game.buildings[buildingUid].owner
+				(
+					this.game.buildings[buildingUid].owner &&
+					this.game.buildings[buildingUid].owner !== userUid
+				)
 			) {
 				failingBuilding = buildingUid;
 				return false;
