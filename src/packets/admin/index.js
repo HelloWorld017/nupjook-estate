@@ -5,6 +5,7 @@ const PacketGetUsers = require('./PacketGetUsers');
 const PacketGetJournals = require('./PacketGetJournals');
 const PacketNextRound = require('./PacketNextRound');
 const PacketSellBuilding = require('./PacketSellBuilding');
+const PacketSendNotification = require('./PacketSendNotification');
 const PacketSetGameState = require('./PacketSetGameState');
 const PacketSetMoney = require('./PacketSetMoney');
 const PacketSetOwnedBuildings = require('./PacketSetOwnedBuildings');
@@ -18,6 +19,7 @@ module.exports = [
 	PacketGetJournals,
 	PacketNextRound,
 	PacketSellBuilding,
+	PacketSendNotification,
 	PacketSetGameState,
 	PacketSetMoney,
 	PacketSetOwnedBuildings,

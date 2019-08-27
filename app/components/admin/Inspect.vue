@@ -19,6 +19,14 @@
 					</div>
 				</div>
 
+				<div class="Inspect__section Inspect__notification">
+					<h2>Notification</h2>
+					<div class="Inspect__row EditRow">
+						<text-input class="EditRow__edit" v-model="sendNotificationText"></text-input>
+						<hold-button @hold="sendNotification">Send Noti</hold-button>
+					</div>
+				</div>
+
 				<div class="Inspect__section Inspect__buildings">
 					<h2>Buildings</h2>
 					<div class="Inspect__row Inspect__row--inflate EditRow EditRow--vertical">
@@ -133,7 +141,8 @@
 		data() {
 			return {
 				setMoneyValue: 0,
-				setBuildingsJson: '[]'
+				setBuildingsJson: '[]',
+				sendNotificationText: ''
 			};
 		},
 
@@ -179,6 +188,13 @@
 					})(),
 
 					'setting buildings'
+				);
+			},
+
+			sendNotification() {
+				wrapAdmin(
+					this.$packet('sendNotification', {text: this.sendNotificationText, target: this.uid}),
+					'sending notification'
 				);
 			}
 		},
