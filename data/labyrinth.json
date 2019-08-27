@@ -1,25 +1,25 @@
 [
 	{
 		"round": 1,
-		"path": "labyrinth1.png",
+		"path": "labyrinth1.gif",
 		"key": "1bXySI0kZlG6eyZD6H9KvM1VBrSyYuRPE7VAhbe914zBJTiAlUdQK3Q"
 	},
 
 	{
 		"round": 3,
-		"path": "labyrinth2.png",
+		"path": "labyrinth2.gif",
 		"key": "2990y2V9tpOtRlzG704Qj9w2wVE4qb15sOtWI500q0m24ii8L8Q9xQ"
 	},
 
 	{
 		"round": 5,
-		"path": "labyrinth3.png",
+		"path": "labyrinth3.gif",
 		"key": "fReSXRW0tHXDmiVKxGdKMvT20JGe0am1bHAHnUmvYiMQLVl0IMqg"
 	},
 
 	{
 		"round": 7,
-		"path": "labyrinth4.png",
+		"path": "labyrinth4.gif",
 		"key": "0rKCQ8I92CmXhJ91j3N8m12amOl04BSxio8q5OKKeUbHc5rL7oDPQI"
 	}
 ]
