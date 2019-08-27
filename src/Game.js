@@ -218,7 +218,7 @@ class Game {
 
 	async loadGame(savePath) {
 		const saveObject = JSON.parse(
-			await fs.promises.readFile(savePath, 'utf-8')
+			await fs.promises.readFile(savePath, 'utf8')
 		);
 
 		this.journals = saveObject.journals;

@@ -112,7 +112,6 @@
 			}
 		},
 
-		//FIXME Remove this before production
 		mounted() {
 			const authInfo = localStorage.getItem('authenticate');
 			if(authInfo) {
