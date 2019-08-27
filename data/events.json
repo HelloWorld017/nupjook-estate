@@ -101,7 +101,7 @@
 
 	{
 		"eventId": "2-radium",
-		"content": "Radium is detected in mettress of dorms",
+		"content": "Radium is detected in mattress of dorms: Sarang Hall, Somang Hall, Areum Hall, Mir & Narae Hall, Heemang & Dasom Hall",
 		"targets": ["N14", "N16", "N19", "DORM", "W6", "W4"],
 		"type": "normal",
 		"change": -2,
@@ -451,7 +451,7 @@
 
 	{
 		"eventId": "6-puma",
-		"content": "Puma escapes from zoo attacks north dormitory",
+		"content": "Puma escapes from zoo appears in north dormitory: Other North Dormitories, Bicycle Store",
 		"targets": ["DORM", "BIKE"],
 		"type": "normal",
 		"change": -3,
