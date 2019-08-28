@@ -192,7 +192,7 @@ class Game {
 
 		const date = new Date();
 		const saveLocation = path.join(savedest,
-			(this.config['save-only-one'] & !isNextRound) ?
+			(this.config['save-only-one'] && !isNextRound) ?
 				'savedata.json' :
 				`save R${this.round},${this.tick}-${
 				date.getFullYear()}. ${
