@@ -1,5 +1,5 @@
 <template>
-	<main id="app">
+	<main id="app" class="App">
 		<template v-if="user && user.isAdmin">
 			<admin-view></admin-view>
 		</template>
@@ -11,6 +11,13 @@
 
 		<template v-else>
 			<login></login>
+			<a class="App__credit" @click="credit = true">
+				Credit
+			</a>
+			
+			<transition name="Opacity">
+				<credit v-if="credit" @close="credit = false"></credit>
+			</transition>
 		</template>
 	</main>
 </template>
@@ -108,20 +115,37 @@
 </style>
 
 <style lang="less" scoped>
-	#app {
+	.App {
 		display: flex;
+		
+		&__credit {
+			cursor: pointer;
+			position: fixed;
+			font-family: 'Noto Sans KR', sans-serif;
+			font-size: .7rem;
+			right: 15px;
+			bottom: 15px;
+		}
 	}
 </style>
 
 <script>
 	import AdminView from "./components/admin/AdminView.vue";
+	import Credit from "./components/Credit.vue";
 	import Login from "./components/Login.vue";
 	import MainView from "./components/MainView.vue";
 	import Sidebar from "./components/Sidebar.vue";
 
 	export default {
+		data() {
+			return {
+				credit: false
+			};
+		},
+		
 		components: {
 			AdminView,
+			Credit,
 			Login,
 			MainView,
 			Sidebar
