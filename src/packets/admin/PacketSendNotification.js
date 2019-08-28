@@ -7,6 +7,10 @@ class PacketSendNotification extends AdminPacket {
 		if(target && this.game.users[target] && this.game.users[target].uid) {
 			targets = [this.game.users[target]];
 		}
+		
+		if(target === 'admin') {
+			targets = this.game.admins;
+		}
 
 		targets.forEach(user => {
 			if(user.socket)

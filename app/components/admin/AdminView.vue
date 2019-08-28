@@ -37,8 +37,9 @@
 						<hold-button @hold="setPrice">Set Price</hold-button>
 					</div>
 
-					<div class="AdminView__row EditRow">
+					<div class="AdminView__row AdminView__row--large EditRow">
 						<text-input class="EditRow__edit" v-model="sendNotificationText"></text-input>
+						<checkbox v-model="sendNotificationAdmin">ToAdmin?</checkbox>
 						<hold-button @hold="sendNotification">Send Noti</hold-button>
 					</div>
 					<building-table></building-table>
@@ -153,6 +154,10 @@
 		button {
 			width: 120px;
 		}
+		
+		.Checkbox {
+			margin-right: 10px;
+		}
 
 		&--vertical {
 			flex-direction: column;
@@ -180,6 +185,7 @@
 
 <script>
 	import BuildingTable from "./BuildingTable.vue";
+	import Checkbox from "../Checkbox.vue";
 	import ClassList from "./ClassList.vue";
 	import DropClass from "./DropClass.vue";
 	import HoldButton from "./HoldButton.vue";
@@ -197,6 +203,7 @@
 				sendNotificationText: '',
 				setPriceUid: '',
 				setPricePrice: 0,
+				sendNotificationAdmin: false,
 				inspectingUser: null
 			};
 		},
@@ -261,7 +268,10 @@
 
 			async sendNotification() {
 				await wrapAdmin(
-					this.$packet('sendNotification', {text: this.sendNotificationText}),
+					this.$packet('sendNotification', {
+						text: this.sendNotificationText,
+						target: this.sendNotificationAdmin ? 'admin' : null
+					}),
 					'sending notification'
 				);
 			},
@@ -273,6 +283,7 @@
 
 		components: {
 			BuildingTable,
+			Checkbox,
 			ClassList,
 			DropClass,
 			HoldButton,
