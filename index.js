@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs');
 const http = require('http');
 const labyrinth = require('./data/labyrinth.json');
 const socketio = require('socket.io');
@@ -8,6 +9,11 @@ const path = require('path');
 const Game = require('./src/Game');
 
 const game = new Game();
+if(fs.existsSync('./savedata/savedata_load.json')) {
+	game.loadGame('./savedata/savedata_load.json').then(() => {
+		console.log("Successfully read save data!");
+	});
+}
 
 const port = parseInt(process.env.PORT || '3000');
 const app = express();
@@ -38,7 +44,5 @@ server.listen(port, () => {
 
 const io = socketio(server);
 io.on('connection', socket => {
-	//FIXME remove this before production
-	console.log("New Connection Established!");
 	packets(game, socket, packets.default);
 });

@@ -36,6 +36,11 @@
 						<text-input class="EditRow__edit" type="number" v-model="setPricePrice"></text-input>
 						<hold-button @hold="setPrice">Set Price</hold-button>
 					</div>
+
+					<div class="AdminView__row EditRow">
+						<text-input class="EditRow__edit" v-model="sendNotificationText"></text-input>
+						<hold-button @hold="sendNotification">Send Noti</hold-button>
+					</div>
 					<building-table></building-table>
 				</div>
 
@@ -189,6 +194,7 @@
 			return {
 				addTimeMinutes: 0,
 				addUserName: '',
+				sendNotificationText: '',
 				setPriceUid: '',
 				setPricePrice: 0,
 				inspectingUser: null
@@ -250,6 +256,13 @@
 				await wrapAdmin(
 					this.$packet('setPrice', {buildingUid: this.setPriceUid, price: this.setPricePrice}),
 					'setting price'
+				);
+			},
+
+			async sendNotification() {
+				await wrapAdmin(
+					this.$packet('sendNotification', {text: this.sendNotificationText}),
+					'sending notification'
 				);
 			},
 

@@ -218,7 +218,7 @@ class Game {
 
 	async loadGame(savePath) {
 		const saveObject = JSON.parse(
-			await fs.promises.readFile(savePath, 'utf-8')
+			await fs.promises.readFile(savePath, 'utf8')
 		);
 
 		this.journals = saveObject.journals;
@@ -228,7 +228,7 @@ class Game {
 		this.state = saveObject.state;
 		this.enabledLabyrinth = labyrinth.reduce((prev, curr) => {
 			if(curr.round > this.round) return prev;
-			if(prev.round > curr.round) return prev;
+			if(prev !== null && prev.round > curr.round) return prev;
 			return curr;
 		}, null);
 
