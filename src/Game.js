@@ -147,6 +147,8 @@ class Game {
 				labyrinth: labyrinthPacket
 			})
 		);
+		
+		this.saveGame(true);
 
 		if(this.round > this.config['max-round']) {
 			this.finish();
@@ -174,7 +176,7 @@ class Game {
 		this.saveGame();
 	}
 
-	async saveGame() {
+	async saveGame(isNextRound = false) {
 		if(!this.config['save-enabled']) return;
 		let savedest = './savedata';
 
@@ -190,9 +192,9 @@ class Game {
 
 		const date = new Date();
 		const saveLocation = path.join(savedest,
-			this.config['save-only-one'] ?
+			(this.config['save-only-one'] & !isNextRound) ?
 				'savedata.json' :
-				`save-${
+				`save R${this.round},${this.tick}-${
 				date.getFullYear()}. ${
 				date.getMonth() + 1}. ${
 				date.getDate()}. ${
